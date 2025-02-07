@@ -19,4 +19,13 @@ class Appointment extends Model
         'brief',
         'product_id',
     ];
+
+    protected $casts =[
+        'meeting_at'=>'date', // format method...
+    ];
+
+    //product_id nyampur ke product_id di table product
+    public function product(){
+        return $this->belongsTo(Product::class,'product_id');
+    }
 }

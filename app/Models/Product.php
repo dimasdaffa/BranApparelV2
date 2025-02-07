@@ -16,4 +16,9 @@ class Product extends Model
         'tagline',
         'name',
     ];
+
+    //dalam satu product akan memiliki banyak appointment
+    public function appointments(){
+        return $this->hasMany(Appointment::class);
+    }
 }

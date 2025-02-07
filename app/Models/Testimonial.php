@@ -15,4 +15,10 @@ class Testimonial extends Model
         'thumbnail',
         'project_client_id',
     ];
+
+    // Relationship setiap testimoni cliet dimiliki project client ORM
+    public function client()
+    {
+        return $this->belongsTo(ProjectClient::class,'project_client_id');
+    }
 }
