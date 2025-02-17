@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Manage Statistics') }}
             </h2>
-            <a href="{{ route('admin.statistics.create') }} "
+            <a href="{{ route('admin.statistics.create') }}"
                 class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                 Add New
             </a>
@@ -28,14 +28,17 @@
                         <div class="hidden md:flex flex-col">
                             <p class="text-slate-500 text-sm">Date</p>
                             <h3 class="text-indigo-950 text-xl font-bold">
-                                {{$statistic->created_at->format('M d, Y')}}
+                                {{ $statistic->created_at->format('M d, Y') }}
                             </h3>
                         </div>
                         <div class="hidden md:flex flex-row items-center gap-x-3">
-                            <a href=" " class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+                            <a href="{{ route('admin.statistics.edit', $statistic) }}"
+                                class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                                 Edit
                             </a>
-                            <form action=" " method="POST">
+                            <form action="{{ route('admin.statistics.destroy', $statistic) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
                                     Delete
                                 </button>
@@ -43,7 +46,9 @@
                         </div>
                     </div>
                 @empty
-                    <p>belum ada data baru</p>
+                    <p>
+                        No data found.
+                    </p>
                 @endforelse
             </div>
         </div>
