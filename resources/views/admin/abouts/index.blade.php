@@ -54,7 +54,7 @@
                     </div>
                 @empty
                     <p>
-                        No data found.
+                        No data found...
                     </p>
                 @endforelse
             </div>
