@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTeamRequest;
 use App\Models\OurTeam;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OurTeamController extends Controller
 {
@@ -33,6 +34,15 @@ class OurTeamController extends Controller
     public function store(StoreTeamRequest $request)
     {
         //
+        DB::transaction(function () use ($request) {
+            $validated = $request->validated();
+            if ($request->hasFile('team')) {
+                $teamPath = $request->file('team')->store('teams', 'public');
+                $validated['team'] = $teamPath;
+            }
+            $newTeam = OurTeam::create($validated);
+        });
+        return redirect()->route('admin.teams.index');
     }
 
     /**
