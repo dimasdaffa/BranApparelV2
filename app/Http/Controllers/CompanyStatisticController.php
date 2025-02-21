@@ -45,7 +45,7 @@ class CompanyStatisticController extends Controller
         return redirect()->route('admin.statistics.index');
     }
 
-    /** 
+    /**
      * Display the specified resource.
      */
     public function show(CompanyStatistic $companyStatistic)
@@ -72,8 +72,12 @@ class CompanyStatisticController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CompanyStatistic $companyStatistic)
+    public function destroy(CompanyStatistic $statistic)
     {
         //
+        DB::transaction(function() use ($statistic) {
+            $statistic->delete();
+        });
+        return redirect()->route('admin.statistics.index');
     }
 }
