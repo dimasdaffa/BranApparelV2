@@ -36,9 +36,9 @@ class ProductController extends Controller
         //
         DB::transaction(function () use ($request) {
             $validated = $request->validated();
-            if ($request->hasFile('product')) {
-                $productPath = $request->file('product')->store('products', 'public');
-                $validated['product'] = $productPath;
+            if ($request->hasFile('thumbnail')) {
+                $thumbnailPath = $request->file('thumbnail')->store('products', 'public');
+                $validated['thumbnail'] = $thumbnailPath;
             }
             $newProduct = Product::create($validated);
         });
