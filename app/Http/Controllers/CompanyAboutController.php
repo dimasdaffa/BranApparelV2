@@ -16,7 +16,7 @@ class CompanyAboutController extends Controller
     {
         //\
         $abouts = CompanyAbout::orderByDesc('id')->paginate(10);
-        return view('admin.abouts.index',compact('abouts'));
+        return view('admin.abouts.index', compact('abouts'));
     }
 
     /**
@@ -41,6 +41,14 @@ class CompanyAboutController extends Controller
                 $validated['thumbnail'] = $thumbnailPath;
             }
             $newAbout = CompanyAbout::create($validated);
+
+            if (!empty($validated['keypoints'])) {
+                foreach ($validated['keypoints'] as $key => $keypoint) {
+                    $newAbout->keypoints()->create([
+                        'keypoint' => $keypoint
+                    ]);
+                }
+            }
         });
         return redirect()->route('admin.abouts.index');
     }
