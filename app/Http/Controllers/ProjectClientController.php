@@ -52,7 +52,7 @@ class ProjectClientController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ProjectClient $projectClient)
+    public function show(ProjectClient $client)
     {
         //
     }
@@ -60,15 +60,16 @@ class ProjectClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ProjectClient $projectClient)
+    public function edit(ProjectClient $client)
     {
         //
+        return view('admin.clients.edit', compact('client'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ProjectClient $projectClient)
+    public function update(Request $request, ProjectClient $client)
     {
         //
     }

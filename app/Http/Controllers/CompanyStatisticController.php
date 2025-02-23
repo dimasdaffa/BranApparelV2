@@ -48,7 +48,7 @@ class CompanyStatisticController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CompanyStatistic $companyStatistic)
+    public function show(CompanyStatistic $statistic)
     {
         //
     }
@@ -56,15 +56,16 @@ class CompanyStatisticController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CompanyStatistic $companyStatistic)
+    public function edit(CompanyStatistic $statistic)
     {
         //
+        return view('admin.statistics.edit', compact('statistic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CompanyStatistic $companyStatistic)
+    public function update(Request $request, CompanyStatistic $statistic)
     {
         //
     }

@@ -17,7 +17,7 @@ class TestimonialController extends Controller
     {
         //
         $testimonials = Testimonial::orderByDesc('id')->paginate(10);
-        return view('admin.testimonials.index',compact('testimonials'));
+        return view('admin.testimonials.index', compact('testimonials'));
     }
 
     /**
@@ -27,7 +27,7 @@ class TestimonialController extends Controller
     {
         //
         $clients = ProjectClient::orderByDesc('id')->get();
-        return view('admin.testimonials.create',compact('clients'));
+        return view('admin.testimonials.create', compact('clients'));
     }
 
     /**
@@ -60,7 +60,9 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
+        $clients = ProjectClient::orderByDesc('id')->get();
         //
+        return view('admin.testimonials.edit', compact('testimonial','clients'));
     }
 
     /**
@@ -77,7 +79,7 @@ class TestimonialController extends Controller
     public function destroy(Testimonial $testimonial)
     {
         //
-        DB::transaction(function() use ($testimonial) {
+        DB::transaction(function () use ($testimonial) {
             $testimonial->delete();
         });
         return redirect()->route('admin.testimonials.index');
