@@ -22,4 +22,11 @@ class FrontController extends Controller
         $hero_section = HeroSection::orderByDesc('id')->take(1)->get();
         return view('front.index',compact('statistics','principles','products','teams','testimonials','hero_section'));
     }
+
+    public function team()
+    {
+        $teams = OurTeam::take(7)->get();
+        $statistics = CompanyStatistic::take(4)->get();
+        return view('front.team',compact('teams','statistics'));
+    }
 }
