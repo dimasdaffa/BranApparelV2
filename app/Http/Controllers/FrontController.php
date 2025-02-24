@@ -37,4 +37,10 @@ class FrontController extends Controller
         $statistics = CompanyStatistic::take(4)->get();
         return view('front.about',compact('statistics','abouts'));
     }
+
+    public function appointment()
+    {
+        $testimonials = Testimonial::take(5)->get();
+        return view('front.appointment',compact('testimonials'));
+    }
 }
