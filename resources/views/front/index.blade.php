@@ -2,50 +2,20 @@
 @section('content')
     <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
         <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
-            <nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3">
-                <div class="flex items-center gap-3">
-                    <div class="flex shrink-0 h-[43px] overflow-hidden">
-                        <img src="{{ asset('assets/logo/logo.svg') }}" class="object-contain w-full h-full" alt="logo">
-                    </div>
-                    <div class="flex flex-col">
-                        <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">BranApparel</p>
-                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">Make Your Favourite ClothX</p>
-                    </div>
-                </div>
-                <ul class="flex flex-wrap items-center gap-[30px]">
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300 text-cp-dark-blue">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="">Products</a>
-                    </li>
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="">Company</a>
-                    </li>
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="">Blog</a>
-                    </li>
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="about.html">About</a>
-                    </li>
-                </ul>
-                <a href=""
-                    class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Get
-                    a Quote</a>
-            </nav>
-
+            {{-- reusable navbar --}}
+            <x-navbar/>
             @forelse ($hero_section as $hero)
-            <input type="hidden" name="path_video" id="path_video" value="{{ $hero->path_video }}">
+                <input type="hidden" name="path_video" id="path_video" value="{{ $hero->path_video }}">
                 <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20">
                     <div class="flex items-center bg-white p-[8px_16px] gap-[10px] rounded-full w-fit">
                         <div class="w-5 h-5 flex shrink-0 overflow-hidden">
                             <img src="{{ asset('assets/icons/crown.svg') }}" class="object-contain" alt="icon">
                         </div>
-                        <p class="font-semibold text-sm">{{$hero->achievement}}</p>
+                        <p class="font-semibold text-sm">{{ $hero->achievement }}</p>
                     </div>
                     <div class="flex flex-col gap-[10px]">
-                        <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">{{$hero->heading}}</h1>
-                        <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{$hero->subheading}}</p>
+                        <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">{{ $hero->heading }}</h1>
+                        <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{ $hero->subheading }}</p>
                     </div>
                     <div class="flex items-center gap-4">
                         <a href=""
@@ -65,9 +35,9 @@
         <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
             <img src="{{ Storage::url($hero->banner) }}" class="object-cover w-full h-full" alt="banner">
         </div>
-        @empty
+    @empty
         <p>belum ada data</p>
-    @endforelse
+        @endforelse
     </div>
     <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
         <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
@@ -123,7 +93,8 @@
             <div
                 class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
                 <div class="overflow-hidden h-9">
-                    <img src="{{ asset('assets/logo/logo-51.svg') }}" class="object-contain w-full h-full" alt="logo">
+                    <img src="{{ asset('assets/logo/logo-51.svg') }}" class="object-contain w-full h-full"
+                        alt="logo">
                 </div>
             </div>
         </div>
@@ -248,7 +219,7 @@
                     <p>belum ada data</p>
                 @endforelse
 
-                <a href="team.html" class="view-all-card">
+                <a href="{{ route('front.team') }}" class="view-all-card">
                     <div
                         class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
                         <div class="w-[60px] h-[60px] flex shrink-0">
