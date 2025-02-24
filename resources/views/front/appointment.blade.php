@@ -2,37 +2,8 @@
 @section('content')
     <div id="header" class="bg-[#F6F7FA] relative h-[700px] -mb-[488px]">
         <div class="container max-w-[1130px] mx-auto relative pt-10  z-10">
-            <nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3">
-                <div class="flex items-center gap-3">
-                    <div class="flex shrink-0 h-[43px] overflow-hidden">
-                        <img src="assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
-                    </div>
-                    <div class="flex flex-col">
-                        <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">ShaynaComp</p>
-                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">Build Futuristic Dreams</p>
-                    </div>
-                </div>
-                <ul class="flex flex-wrap items-center gap-[30px]">
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="">Products</a>
-                    </li>
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="">Company</a>
-                    </li>
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="">Blog</a>
-                    </li>
-                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-                        <a href="about.html">About</a>
-                    </li>
-                </ul>
-                <a href=""
-                    class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Get
-                    a Quote</a>
-            </nav>
+            {{-- reusable navbar --}}
+            <x-navbar />
         </div>
     </div>
     <div id="Contact"
@@ -67,8 +38,9 @@
                 </div>
             </div>
         </div>
-        <form action=""
+        <form action="{{ route('front.appointment_store') }}" method="POST"
             class="flex flex-col p-[30px] rounded-[20px] gap-[18px] bg-white shadow-[0_10px_30px_0_#D1D4DF40] w-full md:w-[700px] shrink-0">
+            @csrf
             <div class="flex items-center gap-[18px]">
                 <div class="flex flex-col gap-2 flex w-full">
                     <p class="font-semibold">Complete Name</p>
@@ -77,7 +49,7 @@
                         <div class="w-[18px] h-[18px] flex shrink-0">
                             <img src="assets/icons/profile.svg" alt="icon">
                         </div>
-                        <input type="text" name="" id=""
+                        <input type="text" name="name" id=""
                             class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full"
                             placeholder="Write your complete name" required>
                     </div>
@@ -89,7 +61,7 @@
                         <div class="w-[18px] h-[18px] flex shrink-0">
                             <img src="assets/icons/sms.svg" alt="icon">
                         </div>
-                        <input type="email" name="" id=""
+                        <input type="email" name="email" id=""
                             class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full"
                             placeholder="Write your email address" required>
                     </div>
@@ -103,7 +75,7 @@
                         <div class="w-[18px] h-[18px] flex shrink-0">
                             <img src="assets/icons/call-black.svg" alt="icon">
                         </div>
-                        <input type="tel" name="" id=""
+                        <input type="tel" name="phone_number" id=""
                             class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full"
                             placeholder="Write your phone number" required>
                     </div>
@@ -117,7 +89,7 @@
                         </div>
                         <button type="button" id="dateButton"
                             class="p-0 bg-transparent w-full text-left border-none outline-none">Choose the date</button>
-                        <input type="date" name="" id="dateInput" class="absolute opacity-0 -z-10">
+                        <input type="date" name="meeting_at" id="dateInput" class="absolute opacity-0 -z-10">
                     </div>
                 </div>
             </div>
@@ -129,20 +101,13 @@
                         <div class="w-[18px] h-[18px] flex shrink-0">
                             <img src="assets/icons/building-4-black.svg" alt="icon">
                         </div>
-                        <select name="" id=""
+                        <select name="product_id" id=""
                             class="appearance-none outline-none w-full invalid:font-normal font-semibold px-[10px] -mx-[10px]"
                             required>
                             <option value="" hidden>Choose a project</option>
-                            <option value="Residential Complex">Residential Complex</option>
-                            <option value="Commercial Building">Commercial Building</option>
-                            <option value="Mixed-Use Development">Mixed-Use Development</option>
-                            <option value="Office Tower">Office Tower</option>
-                            <option value="Industrial Facility">Industrial Facility</option>
-                            <option value="Retail Center">Retail Center</option>
-                            <option value="Healthcare Facility">Healthcare Facility</option>
-                            <option value="Hospitality Project">Hospitality Project</option>
-                            <option value="Civic Center">Civic Center</option>
-                            <option value="Transportation Hub">Transportation Hub</option>
+                            @foreach ($products as $product)
+                                <option value="{{ $product->id }}">{{ $product->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -153,7 +118,7 @@
                         <div class="w-[18px] h-[18px] flex shrink-0">
                             <img src="assets/icons/dollar-square.svg" alt="icon">
                         </div>
-                        <input type="number" name="" id=""
+                        <input type="number" name="budget" id=""
                             class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full"
                             placeholder="What is your budget" required>
                     </div>
@@ -166,7 +131,7 @@
                     <div class="w-[18px] h-[18px] flex shrink-0 mt-[3px]">
                         <img src="assets/icons/message-text.svg" alt="icon">
                     </div>
-                    <textarea name="" id="" rows="6"
+                    <textarea name="brief" id="" rows="6"
                         class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full resize-none"
                         placeholder="Tell us the project brief"></textarea>
                 </div>
@@ -241,273 +206,68 @@
             <p
                 class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
                 SUCCESS CLIENTS</p>
-            <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company</h2>
+            <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company
+            </h2>
         </div>
         <div class="main-carousel w-full">
-            <div
-                class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-                <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                    <div class="flex flex-col gap-[30px]">
-                        <div class="h-9 overflow-hidden">
-                            <img src="assets/logo/logo-54.svg" class="object-contain" alt="icon">
+
+            @forelse ($testimonials as $testimonial)
+                <div
+                    class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
+                    <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
+                        <div class="flex flex-col gap-[30px]">
+                            <div class="h-9 overflow-hidden">
+                                <img src="{{ Storage::url($testimonial->client->logo) }}" class="object-contain"
+                                    alt="icon">
+                            </div>
+                            <div class="relative pt-[27px] pl-[30px]">
+                                <div class="absolute top-0 left-0">
+                                    <img src="{{ asset('assets/icons/quote.svg') }}" alt="icon">
+                                </div>
+                                <p class="font-semibold text-2xl leading-[46px] relative z-10">{{ $testimonial->message }}
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pl-[30px]">
+                                <div class="flex items-center gap-6">
+                                    <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+                                        <img src="{{ Storage::url($testimonial->client->avatar) }}"
+                                            class="w-full h-full object-cover" alt="photo">
+                                    </div>
+                                    <div class="flex flex-col justify-center gap-1">
+                                        <p class="font-bold">{{ $testimonial->client->name }}</p>
+                                        <p class="text-sm text-cp-light-grey">{{ $testimonial->client->occupation }}</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-nowrap">
+                                    <div class="w-6 h-6 flex shrink-0">
+                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                    </div>
+                                    <div class="w-6 h-6 flex shrink-0">
+                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                    </div>
+                                    <div class="w-6 h-6 flex shrink-0">
+                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                    </div>
+                                    <div class="w-6 h-6 flex shrink-0">
+                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                    </div>
+                                    <div class="w-6 h-6 flex shrink-0">
+                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="relative pt-[27px] pl-[30px]">
-                            <div class="absolute top-0 left-0">
-                                <img src="assets/icons/quote.svg" alt="icon">
-                            </div>
-                            <p class="font-semibold text-2xl leading-[46px] relative z-10">Shayna is a leading construction
-                                company in Melbourne, building new homes and commercial projects that are durable,
-                                functional and beautiful.</p>
-                        </div>
-                        <div class="flex items-center justify-between pl-[30px]">
-                            <div class="flex items-center gap-6">
-                                <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                    <img src="assets/photos/photo3.png" class="w-full h-full object-cover"
-                                        alt="photo">
-                                </div>
-                                <div class="flex flex-col justify-center gap-1">
-                                    <p class="font-bold">Sirania</p>
-                                    <p class="text-sm text-cp-light-grey">CRO Kamikapan</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-nowrap">
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
-                    </div>
-                </div>
-                <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                    <img src="assets/backgrounds/banner.jpg" class="w-full h-full object-cover object-center"
-                        alt="thumbnail">
-                </div>
-            </div>
-            <div
-                class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-                <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                    <div class="flex flex-col gap-[30px]">
-                        <div class="h-9 overflow-hidden">
-                            <img src="assets/logo/logo-51.svg" class="object-contain" alt="icon">
-                        </div>
-                        <div class="relative pt-[27px] pl-[30px]">
-                            <div class="absolute top-0 left-0">
-                                <img src="assets/icons/quote.svg" alt="icon">
-                            </div>
-                            <p class="font-semibold text-2xl leading-[46px] relative z-10">Lorem ipsum dolor sit amet
-                                consectetur adipisicing elit. Nihil distinctio quasi blanditiis dolorum iste velit. Quo
-                                alias non ab debitis!</p>
-                        </div>
-                        <div class="flex items-center justify-between pl-[30px]">
-                            <div class="flex items-center gap-6">
-                                <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                    <img src="assets/photos/photo2.png" class="w-full h-full object-cover"
-                                        alt="photo">
-                                </div>
-                                <div class="flex flex-col justify-center gap-1">
-                                    <p class="font-bold">Bruno Oleo</p>
-                                    <p class="text-sm text-cp-light-grey">Customer Relations</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-nowrap">
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                            </div>
+                        <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
                         </div>
                     </div>
-                    <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
+                    <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
+                        <img src="{{ Storage::url($testimonial->thumbnail) }}"
+                            class="w-full h-full object-cover object-center" alt="thumbnail">
                     </div>
                 </div>
-                <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                    <img src="assets/thumbnails/cover1.jpg" class="w-full h-full object-cover object-center"
-                        alt="thumbnail">
-                </div>
-            </div>
-            <div
-                class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-                <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                    <div class="flex flex-col gap-[30px]">
-                        <div class="h-9 overflow-hidden">
-                            <img src="assets/logo/logo-54.svg" class="object-contain" alt="icon">
-                        </div>
-                        <div class="relative pt-[27px] pl-[30px]">
-                            <div class="absolute top-0 left-0">
-                                <img src="assets/icons/quote.svg" alt="icon">
-                            </div>
-                            <p class="font-semibold text-2xl leading-[46px] relative z-10">Lorem ipsum dolor sit, amet
-                                consectetur adipisicing elit. Distinctio officia, reprehenderit magni obcaecati praesentium
-                                quasi iusto rerum.</p>
-                        </div>
-                        <div class="flex items-center justify-between pl-[30px]">
-                            <div class="flex items-center gap-6">
-                                <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                    <img src="assets/photos/photo4.png" class="w-full h-full object-cover"
-                                        alt="photo">
-                                </div>
-                                <div class="flex flex-col justify-center gap-1">
-                                    <p class="font-bold">Sami Kimi</p>
-                                    <p class="text-sm text-cp-light-grey">Senior 3D Designer</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-nowrap">
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
-                    </div>
-                </div>
-                <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                    <img src="assets/thumbnails/cover2.jpg" class="w-full h-full object-cover object-center"
-                        alt="thumbnail">
-                </div>
-            </div>
-            <div
-                class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-                <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                    <div class="flex flex-col gap-[30px]">
-                        <div class="h-9 overflow-hidden">
-                            <img src="assets/logo/logo-44.svg" class="object-contain" alt="icon">
-                        </div>
-                        <div class="relative pt-[27px] pl-[30px]">
-                            <div class="absolute top-0 left-0">
-                                <img src="assets/icons/quote.svg" alt="icon">
-                            </div>
-                            <p class="font-semibold text-2xl leading-[46px] relative z-10">Lorem ipsum dolor sit amet,
-                                consectetur adipisicing elit. Recusandae, rem!</p>
-                        </div>
-                        <div class="flex items-center justify-between pl-[30px]">
-                            <div class="flex items-center gap-6">
-                                <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                    <img src="assets/photos/photo7.png" class="w-full h-full object-cover"
-                                        alt="photo">
-                                </div>
-                                <div class="flex flex-col justify-center gap-1">
-                                    <p class="font-bold">Yuyan Chin</p>
-                                    <p class="text-sm text-cp-light-grey">Product Manager</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-nowrap">
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
-                    </div>
-                </div>
-                <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                    <img src="assets/backgrounds/banner.jpg" class="w-full h-full object-cover object-center"
-                        alt="thumbnail">
-                </div>
-            </div>
-            <div
-                class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-                <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                    <div class="flex flex-col gap-[30px]">
-                        <div class="h-9 overflow-hidden">
-                            <img src="assets/logo/logo-54.svg" class="object-contain" alt="icon">
-                        </div>
-                        <div class="relative pt-[27px] pl-[30px]">
-                            <div class="absolute top-0 left-0">
-                                <img src="assets/icons/quote.svg" alt="icon">
-                            </div>
-                            <p class="font-semibold text-2xl leading-[46px] relative z-10">Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Officiis quia adipisci voluptatum deleniti rerum, explicabo
-                                aperiam illum porro voluptatibus qui expedita sapiente sed sequi animi!</p>
-                        </div>
-                        <div class="flex items-center justify-between pl-[30px]">
-                            <div class="flex items-center gap-6">
-                                <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                    <img src="assets/photos/photo6.png" class="w-full h-full object-cover"
-                                        alt="photo">
-                                </div>
-                                <div class="flex flex-col justify-center gap-1">
-                                    <p class="font-bold">Putri Emily</p>
-                                    <p class="text-sm text-cp-light-grey">Chief Executive Officer</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-nowrap">
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                                <div class="w-6 h-6 flex shrink-0">
-                                    <img src="assets/icons/Star-rating.svg" alt="star">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
-                    </div>
-                </div>
-                <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                    <img src="assets/thumbnails/cover3.jpg" class="w-full h-full object-cover object-center"
-                        alt="thumbnail">
-                </div>
-            </div>
+            @empty
+                <p>belum ada data</p>
+            @endforelse
         </div>
     </div>
     <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
