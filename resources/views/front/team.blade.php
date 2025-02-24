@@ -46,7 +46,7 @@
                 @endforelse
             </div>
         </div>
-        <div id="Stats" class="bg-cp-black w-full mt-20">
+        <div id="Stats" class="bg-cp-darker-red w-full mt-20">
             <div class="container max-w-[1000px] mx-auto py-10">
                 <div class="flex flex-wrap items-center justify-between p-[10px]">
                     @forelse ($statistics as $statistic)
@@ -69,11 +69,11 @@
             <div class="flex items-center justify-between">
                 <div class="flex flex-col gap-[14px]">
                     <p
-                        class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                        class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                         OUR AWARDS</p>
                     <h2 class="font-bold text-4xl leading-[45px]">We’ve Dedicated Our<br>Best Team Efforts</h2>
                 </div>
-                <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
+                <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
             </div>
             <div
                 class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
@@ -119,7 +119,7 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
+        <footer class="bg-cp-darker-red w-full relative overflow-hidden mt-20">
             <div
                 class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
                 <div class="flex flex-col gap-10">
@@ -128,8 +128,8 @@
                             <img src="assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
                         </div>
                         <div class="flex flex-col">
-                            <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">ShaynaComp</p>
-                            <p id="CompanyTagline" class="text-sm text-cp-light-grey">Build Futuristic Dreams</p>
+                            <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">BranApparel</p>
+                            <p id="CompanyTagline" class="text-sm text-cp-light-grey">From Us to All Around The Worlds</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-4">
@@ -195,7 +195,7 @@
                 </div>
             </div>
             <div class="absolute -bottom-[135px] w-full">
-                <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">SHAYNA</p>
+                <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">BranApparel</p>
             </div>
         </footer>
     @endsection

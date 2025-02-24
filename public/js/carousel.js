@@ -19,7 +19,7 @@ $(document).ready(function(){
                 let dot = $('<div></div>');
                 if (i === index) {
                     button.addClass('button h-4');
-                    dot.addClass('w-10 h-1 rounded-full bg-cp-dark-blue');
+                    dot.addClass('w-10 h-1 rounded-full bg-cp-dark-red');
                 } else {
                     button.addClass('button h-4');
                     dot.addClass('w-10 h-1 rounded-full bg-[#E8EAF2]');

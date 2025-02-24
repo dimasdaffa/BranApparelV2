@@ -34,7 +34,7 @@
                     <div class="w-6 h-6 flex shrink-0">
                         <img src="assets/icons/monitor-mobbile.svg" alt="icon">
                     </div>
-                    <p class="text-cp-dark-blue font-semibold">shaynacomp.com</p>
+                    <p class="text-cp-dark-blue font-semibold">BranApparel.com</p>
                 </div>
             </div>
         </div>
@@ -137,13 +137,13 @@
                 </div>
             </div>
             <button type="submit"
-                class="bg-cp-dark-blue p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book
+                class="bg-cp-dark-red p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book
                 Appointment</button>
         </form>
     </div>
     <div id="Clients"
         class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20 relative z-10">
-        <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
+        <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
         <div class="logo-container flex flex-wrap gap-5 justify-center">
             <div
                 class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
@@ -204,7 +204,7 @@
     <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
         <div class="flex flex-col gap-[14px] items-center">
             <p
-                class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                 SUCCESS CLIENTS</p>
             <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company
             </h2>
@@ -270,7 +270,7 @@
             @endforelse
         </div>
     </div>
-    <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
+    <footer class="bg-cp-darker-red w-full relative overflow-hidden mt-20">
         <div
             class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
             <div class="flex flex-col gap-10">
@@ -279,8 +279,8 @@
                         <img src="assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
                     </div>
                     <div class="flex flex-col">
-                        <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">ShaynaComp</p>
-                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">Build Futuristic Dreams</p>
+                        <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">BranApparel</p>
+                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">From Us to All Around The Worlds</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
@@ -343,7 +343,7 @@
             </div>
         </div>
         <div class="absolute -bottom-[135px] w-full">
-            <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">SHAYNA</p>
+            <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">BranApparel</p>
         </div>
     </footer>
 @endsection

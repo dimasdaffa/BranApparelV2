@@ -19,9 +19,9 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <a href=""
-                            class="bg-cp-dark-blue p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Explore
+                            class="bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Explore
                             Now</a>
-                        <button class="bg-cp-black p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]"
+                        <button class="bg-cp-darker-red p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]"
                             onclick="{modal.show()}">
                             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
                                 <img src="{{ asset('assets/icons/play-circle.svg') }}" class="w-full h-full object-contain"
@@ -40,7 +40,7 @@
         @endforelse
     </div>
     <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
-        <h2 class="font-bold text-lg">Trusted by 500+ Top Leaders Worldwide</h2>
+        <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
         <div class="logo-container flex flex-wrap gap-5 justify-center">
             <div
                 class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
@@ -103,11 +103,11 @@
         <div class="flex items-center justify-between">
             <div class="flex flex-col gap-[14px]">
                 <p
-                    class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                     OUR PRINCIPLES</p>
-                <h2 class="font-bold text-4xl leading-[45px]">We Might Best Choice <br> For Your Company</h2>
+                <h2 class="font-bold text-4xl leading-[45px]">Kami Bukan Yang Pertama <br> Tetapi Kami Yang Terbaik</h2>
             </div>
-            <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
+            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
         </div>
         <div class="flex flex-wrap items-center gap-[30px] justify-center">
 
@@ -137,7 +137,7 @@
         </div>
     </div>
 
-    <div id="Stats" class="bg-cp-black w-full mt-20">
+    <div id="Stats" class="bg-cp-darker-red w-full mt-20">
         <div class="container max-w-[1000px] mx-auto py-10">
             <div class="flex flex-wrap items-center justify-between p-[10px]">
                 @forelse ($statistics as $statistic)
@@ -166,7 +166,7 @@
                 </div>
                 <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
                     <p
-                        class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                        class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                         {{ $product->tagline }}</p>
                     <div class="flex flex-col gap-[10px]">
                         <h2 class="font-bold text-4xl leading-[45px]">{{ $product->name }}
@@ -174,7 +174,7 @@
                         <p class="leading-[30px] text-cp-light-grey">{{ $product->about }}</p>
                     </div>
                     <a href="{{ route('front.appointment') }}"
-                        class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book
+                        class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book
                         Appointment</a>
                 </div>
             </div>
@@ -187,8 +187,8 @@
         <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
             <div class="flex flex-col gap-[14px] items-center">
                 <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                    OUR POWERFUL TEAM</p>
-                <h2 class="font-bold text-4xl leading-[45px] text-center">We Share Same Dreams <br> Change The World
+                    CUSTOMER KAMI</p>
+                <h2 class="font-bold text-4xl leading-[45px] text-center">Kami Berbagi Mimpi yang Sama <br> Menjadi Yang Terbaik !
                 </h2>
             </div>
             <div
@@ -226,8 +226,8 @@
                             <img src="{{ asset('assets/icons/profile-2user.svg') }}" alt="icon">
                         </div>
                         <div class="flex flex-col gap-1 text-center">
-                            <p class="font-bold text-xl leading-[30px]">View All</p>
-                            <p class="text-cp-light-grey">Our Great People</p>
+                            <p class="font-bold text-xl leading-[30px]">Lihat Semua</p>
+                            <p class="text-cp-light-grey">Pelanggan Setia Kami</p>
                         </div>
                     </div>
                 </a>
@@ -237,7 +237,7 @@
     <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
         <div class="flex flex-col gap-[14px] items-center">
             <p
-                class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                 SUCCESS CLIENTS</p>
             <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company
             </h2>
@@ -307,11 +307,11 @@
         <div class="flex items-center justify-between">
             <div class="flex flex-col gap-[14px]">
                 <p
-                    class="badge w-fit bg-cp-pale-blue text-cp-light-blue p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                     OUR AWARDS</p>
                 <h2 class="font-bold text-4xl leading-[45px]">We’ve Dedicated Our<br>Best Team Efforts</h2>
             </div>
-            <a href="" class="bg-cp-black p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
+            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
         </div>
         <div
             class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
@@ -364,7 +364,7 @@
                     <div class="flex flex-col gap-[10px]">
                         <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
                     </div>
-                    <a href="{{ route('front.appointment') }}" class="p-5 bg-cp-black rounded-xl text-white w-fit font-bold">Contact
+                    <a href="{{ route('front.appointment') }}" class="p-5 bg-cp-darker-red rounded-xl text-white w-fit font-bold">Contact
                         Us</a>
                 </div>
                 <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
@@ -436,7 +436,7 @@
             </div>
         </div>
     </div>
-    <footer class="bg-cp-black w-full relative overflow-hidden mt-20">
+    <footer class="bg-cp-darker-red w-full relative overflow-hidden mt-20">
         <div
             class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
             <div class="flex flex-col gap-10">
@@ -447,7 +447,7 @@
                     </div>
                     <div class="flex flex-col">
                         <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">BranApparel</p>
-                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">Build Futuristic Dreams</p>
+                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">From Us to All Around The Worlds</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
@@ -514,7 +514,7 @@
             </div>
         </div>
         <div class="absolute -bottom-[135px] w-full">
-            <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">SHAYNA</p>
+            <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">BranApparel</p>
         </div>
     </footer>
     <div id="video-modal" tabindex="-1" aria-hidden="true"
