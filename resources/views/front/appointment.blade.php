@@ -330,8 +330,8 @@
                         Policy</a>
                     <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms &
                         Conditions</a>
-                    <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
-                        Us</a>
+                    <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Hubungi
+                        Kami</a>
                     <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">
                 </div>
             </div>

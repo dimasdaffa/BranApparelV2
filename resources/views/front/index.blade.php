@@ -19,8 +19,7 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <a href=""
-                            class="bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Explore
-                            Now</a>
+                            class="bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Lebih Banyak</a>
                         <button class="bg-cp-darker-red p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]"
                             onclick="{modal.show()}">
                             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
@@ -67,10 +66,10 @@
             <div class="flex flex-col gap-[14px]">
                 <p
                     class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                    OUR PRINCIPLES</p>
+                    OUR VALUES</p>
                 <h2 class="font-bold text-4xl leading-[45px]">Kami Bukan Yang Pertama <br> Tetapi Kami Yang Terbaik</h2>
             </div>
-            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
+            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
         </div>
         <div class="flex flex-wrap items-center gap-[30px] justify-center">
 
@@ -123,8 +122,8 @@
 
         @forelse ($products as $product)
             <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
-                <div class="w-[470px] h-[550px] flex shrink-0 overflow-hidden">
-                    <img src="{{ Storage::url($product->thumbnail) }}" class="w-full h-full object-contain"
+                <div class="w-[400px] h-[550px] flex shrink-0 overflow-hidden rounded-[20px]">
+                    <img src="{{ Storage::url($product->thumbnail) }}" class="w-full h-full object-cover rounded-[20px]"
                         alt="thumbnail">
                 </div>
                 <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
@@ -149,8 +148,8 @@
     <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
         <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
             <div class="flex flex-col gap-[14px] items-center">
-                <p class="badge w-fit bg-cp-light-blue text-white p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                    CUSTOMER KAMI</p>
+                <p class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                    KLIEN KAMI</p>
                 <h2 class="font-bold text-4xl leading-[45px] text-center">Kami Berbagi Mimpi yang Sama <br> Menjadi Yang Terbaik !
                 </h2>
             </div>
@@ -175,7 +174,7 @@
                             <div class="w-6 h-6 flex shrink-0">
                                 <img src="{{ asset('assets/icons/global.svg') }}" alt="icon">
                             </div>
-                            <p class="text-cp-dark-blue font-semibold">{{ $team->location }}</p>
+                            <p class="font-semibold">{{ $team->location }}</p>
                         </div>
                     </div>
                 @empty
@@ -274,49 +273,49 @@
                     GALLERY</p>
                 <h2 class="font-bold text-4xl leading-[45px]">Lihat lebih dekat bagaimana kami<br>menghadirkan baju custom berkualitas!</h2>
             </div>
-            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
+            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
         </div>
         <div
             class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
             <div
                 class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
                 <div class="w-[55px] h-[55px] flex shrink-0">
-                    <img src="{{ asset('assets/icons/cup-blue.svg') }}" alt="icon">
+                    <img src="{{ asset('assets/icons/cup-red.svg') }}" alt="icon">
                 </div>
                 <hr class="border-[#E8EAF2]">
-                <p class="font-bold text-xl leading-[30px]">Solid Fundamental Crafter Async</p>
+                <p class="font-bold text-xl leading-[30px]">Proses Produksi</p>
                 <hr class="border-[#E8EAF2]">
-                <p class="text-cp-light-grey">Bali, 2020</p>
+                <p class="text-cp-light-grey">Setiap baju dibuat dengan ketelitian dan bahan berkualitas untuk hasil terbaik.</p>
             </div>
             <div
                 class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
                 <div class="w-[55px] h-[55px] flex shrink-0">
-                    <img src="{{ asset('assets/icons/cup-blue.svg') }}" alt="icon">
+                    <img src="{{ asset('assets/icons/cup-red.svg') }}" alt="icon">
                 </div>
                 <hr class="border-[#E8EAF2]">
-                <p class="font-bold text-xl leading-[30px]">Most Crowded Yet Harmony Place</p>
+                <p class="font-bold text-xl leading-[30px]">Proses Desain</p>
                 <hr class="border-[#E8EAF2]">
-                <p class="text-cp-light-grey">Shanghai, 2021</p>
+                <p class="text-cp-light-grey">Dari ide ke realitas! Kami wujudkan desain custom yang sesuai dengan Anda.</p>
             </div>
             <div
                 class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
                 <div class="w-[55px] h-[55px] flex shrink-0">
-                    <img src="{{ asset('assets/icons/cup-blue.svg') }}" alt="icon">
+                    <img src="{{ asset('assets/icons/cup-red.svg') }}" alt="icon">
                 </div>
                 <hr class="border-[#E8EAF2]">
-                <p class="font-bold text-xl leading-[30px]">Small Things Made Much Big Impacts</p>
+                <p class="font-bold text-xl leading-[30px]">Proses Packing</p>
                 <hr class="border-[#E8EAF2]">
-                <p class="text-cp-light-grey">Zurich, 2022</p>
+                <p class="text-cp-light-grey">Dikemas dengan rapi dan aman, memastikan pesanan Anda sampai dalam kondisi sempurna.</p>
             </div>
             <div
                 class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
                 <div class="w-[55px] h-[55px] flex shrink-0">
-                    <img src="{{ asset('assets/icons/cup-blue.svg') }}" alt="icon">
+                    <img src="{{ asset('assets/icons/cup-red.svg') }}" alt="icon">
                 </div>
                 <hr class="border-[#E8EAF2]">
-                <p class="font-bold text-xl leading-[30px]">Teamwork and Solidarity</p>
+                <p class="font-bold text-xl leading-[30px]">Proses Quality Control</p>
                 <hr class="border-[#E8EAF2]">
-                <p class="text-cp-light-grey">Bandung, 2023</p>
+                <p class="text-cp-light-grey">Kami cek setiap detail agar hanya produk terbaik yang Anda terima!</p>
             </div>
         </div>
     </div>
@@ -327,72 +326,60 @@
                     <div class="flex flex-col gap-[10px]">
                         <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
                     </div>
-                    <a href="{{ route('front.appointment') }}" class="p-5 bg-cp-darker-red rounded-xl text-white w-fit font-bold">Contact
-                        Us</a>
+                    <a href="{{ route('front.appointment') }}" class="p-5 bg-cp-darker-red rounded-xl text-white w-fit font-bold">Hubungi
+                        Kami</a>
                 </div>
                 <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
                     <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
                         <button class="accordion-button flex justify-between gap-1 items-center"
                             data-accordion="accordion-faq-1">
-                            <span class="font-bold text-lg leading-[27px] text-left">Can installments be beneficial for
-                                both?</span>
+                            <span class="font-bold text-lg leading-[27px] text-left">Berapa lama waktu produksi untuk baju custom?</span>
                             <div class="arrow w-9 h-9 flex shrink-0">
                                 <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
                                     class="transition-all duration-300" alt="icon">
                             </div>
                         </button>
                         <div id="accordion-faq-1" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients
-                                assets to the max level so that we chose the best one from Jakarta, Indonesia will also
-                                protect post building finished completed ahead one.</p>
+                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Waktu produksi bervariasi, biasanya 5-10 hari kerja, tergantung pada jumlah pesanan dan tingkat kerumitan desain. Kami akan menginformasikan estimasi waktu sebelum produksi dimulai.</p>
                         </div>
                     </div>
                     <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
                         <button class="accordion-button flex justify-between gap-1 items-center"
                             data-accordion="accordion-faq-2">
-                            <span class="font-bold text-lg leading-[27px] text-left">What kind of framework you popular
-                                with?</span>
+                            <span class="font-bold text-lg leading-[27px] text-left">Apakah bisa membuat desain sendiri atau harus dari template?</span>
                             <div class="arrow w-9 h-9 flex shrink-0">
                                 <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
                                     class="transition-all duration-300" alt="icon">
                             </div>
                         </button>
                         <div id="accordion-faq-2" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients
-                                assets to the max level so that we chose the best one from Jakarta, Indonesia will also
-                                protect post building finished completed ahead one.</p>
+                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Tentu! Anda bisa mengirimkan desain sendiri atau memilih dari template yang kami sediakan. Tim kami juga siap membantu menyempurnakan desain Anda.</p>
                         </div>
                     </div>
                     <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
                         <button class="accordion-button flex justify-between gap-1 items-center"
                             data-accordion="accordion-faq-3">
-                            <span class="font-bold text-lg leading-[27px] text-left">What insurance provider do you
-                                use?</span>
+                            <span class="font-bold text-lg leading-[27px] text-left">Apakah ada minimum order untuk pemesanan custom?</span>
                             <div class="arrow w-9 h-9 flex shrink-0">
                                 <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
                                     class="transition-all duration-300" alt="icon">
                             </div>
                         </button>
                         <div id="accordion-faq-3" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients
-                                assets to the max level so that we chose the best one from Jakarta, Indonesia will also
-                                protect post building finished completed ahead one.</p>
+                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Kami menerima pemesanan mulai dari 1 pcs, tetapi untuk jumlah besar, kami menawarkan harga spesial!</p>
                         </div>
                     </div>
                     <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
                         <button class="accordion-button flex justify-between gap-1 items-center"
                             data-accordion="accordion-faq-4">
-                            <span class="font-bold text-lg leading-[27px] text-left">What if we have other
-                                questions?</span>
+                            <span class="font-bold text-lg leading-[27px] text-left">Bahan dan jenis sablon apa saja yang tersedia?</span>
                             <div class="arrow w-9 h-9 flex shrink-0">
                                 <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
                                     class="transition-all duration-300" alt="icon">
                             </div>
                         </button>
                         <div id="accordion-faq-4" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">We want to protect our and clients
-                                assets to the max level so that we chose the best one from Jakarta, Indonesia will also
-                                protect post building finished completed ahead one.</p>
+                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Kami menyediakan berbagai pilihan bahan berkualitas, seperti Cotton Combed, Polyester, dan Dri-Fit. Untuk sablon, tersedia Plastisol, Polyflex, DTG, dan Sublimasi, sesuai kebutuhan Anda.</p>
                         </div>
                     </div>
                 </div>
@@ -463,8 +450,8 @@
                         & Policy</a>
                     <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms &
                         Conditions</a>
-                    <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
-                        Us</a>
+                    <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Hubungi
+                        Kami</a>
 
                 </div>
             </div>

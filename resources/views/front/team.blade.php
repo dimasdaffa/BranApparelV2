@@ -38,7 +38,7 @@
                             <div class="w-6 h-6 flex shrink-0">
                                 <img src="assets/icons/global.svg" alt="icon">
                             </div>
-                            <p class="text-cp-dark-blue font-semibold">{{$team->location}}</p>
+                            <p class="font-semibold">{{$team->location}}</p>
                         </div>
                     </div>
                 @empty
@@ -73,49 +73,49 @@
                         GALLERY</p>
                     <h2 class="font-bold text-4xl leading-[45px]">Lihat lebih dekat bagaimana kami<br>menghadirkan baju custom berkualitas!</h2>
                 </div>
-                <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
+                <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
             </div>
             <div
                 class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
                 <div
                     class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
                     <div class="w-[55px] h-[55px] flex shrink-0">
-                        <img src="assets/icons/cup-blue.svg" alt="icon">
+                        <img src="assets/icons/cup-red.svg" alt="icon">
                     </div>
                     <hr class="border-[#E8EAF2]">
-                    <p class="font-bold text-xl leading-[30px]">Solid Fundamental Crafter Async</p>
+                    <p class="font-bold text-xl leading-[30px]">Proses Produksi</p>
                     <hr class="border-[#E8EAF2]">
-                    <p class="text-cp-light-grey">Bali, 2020</p>
+                    <p class="text-cp-light-grey">Setiap baju dibuat dengan ketelitian dan bahan berkualitas untuk hasil terbaik.</p>
                 </div>
                 <div
                     class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
                     <div class="w-[55px] h-[55px] flex shrink-0">
-                        <img src="assets/icons/cup-blue.svg" alt="icon">
+                        <img src="assets/icons/cup-red.svg" alt="icon">
                     </div>
                     <hr class="border-[#E8EAF2]">
-                    <p class="font-bold text-xl leading-[30px]">Most Crowded Yet Harmony Place</p>
+                    <p class="font-bold text-xl leading-[30px]">Proses Desain</p>
                     <hr class="border-[#E8EAF2]">
-                    <p class="text-cp-light-grey">Shanghai, 2021</p>
+                    <p class="text-cp-light-grey">Dari ide ke realitas! Kami wujudkan desain custom yang sesuai dengan Anda.</p>
                 </div>
                 <div
                     class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
                     <div class="w-[55px] h-[55px] flex shrink-0">
-                        <img src="assets/icons/cup-blue.svg" alt="icon">
+                        <img src="assets/icons/cup-red.svg" alt="icon">
                     </div>
                     <hr class="border-[#E8EAF2]">
-                    <p class="font-bold text-xl leading-[30px]">Small Things Made Much Big Impacts</p>
+                    <p class="font-bold text-xl leading-[30px]">Proses Packing</p>
                     <hr class="border-[#E8EAF2]">
-                    <p class="text-cp-light-grey">Zurich, 2022</p>
+                    <p class="text-cp-light-grey">Dikemas dengan rapi dan aman, memastikan pesanan Anda sampai dalam kondisi sempurna.</p>
                 </div>
                 <div
                     class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
                     <div class="w-[55px] h-[55px] flex shrink-0">
-                        <img src="assets/icons/cup-blue.svg" alt="icon">
+                        <img src="assets/icons/cup-red.svg" alt="icon">
                     </div>
                     <hr class="border-[#E8EAF2]">
-                    <p class="font-bold text-xl leading-[30px]">Teamwork and Solidarity</p>
+                    <p class="font-bold text-xl leading-[30px]">Proses Quality Control</p>
                     <hr class="border-[#E8EAF2]">
-                    <p class="text-cp-light-grey">Bandung, 2023</p>
+                    <p class="text-cp-light-grey">Kami cek setiap detail agar hanya produk terbaik yang Anda terima!</p>
                 </div>
             </div>
         </div>
