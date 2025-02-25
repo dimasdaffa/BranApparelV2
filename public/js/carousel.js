@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.main-carousel').flickity({
       contain: true,
-      autoPlay: 4000,
+      autoPlay: 3000,
       prevNextButtons: false,
       pageDots: false,
       wrapAround: true,
