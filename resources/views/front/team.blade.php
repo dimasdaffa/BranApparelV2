@@ -14,7 +14,7 @@
                     <span class="text-cp-light-grey">/</span>
                     <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Our Team</p>
                 </div>
-                <h2 class="font-bold text-4xl leading-[45px] text-center">We’re Here The Best Partners
+                <h2 class="font-bold text-4xl leading-[45px] text-center">Kami Adalah Partner Terbaik
                 </h2>
             </div>
             <div
@@ -70,8 +70,8 @@
                 <div class="flex flex-col gap-[14px]">
                     <p
                         class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                        OUR AWARDS</p>
-                    <h2 class="font-bold text-4xl leading-[45px]">We’ve Dedicated Our<br>Best Team Efforts</h2>
+                        GALLERY</p>
+                    <h2 class="font-bold text-4xl leading-[45px]">Lihat lebih dekat bagaimana kami<br>menghadirkan baju custom berkualitas!</h2>
                 </div>
                 <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Explore More</a>
             </div>
@@ -133,12 +133,7 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-4">
-                        <a href="">
-                            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                                <img src="assets/icons/youtube.svg" class="w-full h-full object-contain" alt="youtube">
-                            </div>
-                        </a>
-                        <a href="">
+                        <a href="https://wa.me/+6285162808272?text=Halo%20Admin%2C%20Saya%20ingin%20memesan%20produk%20di%20Bran%20Apparel">
                             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
                                 <img src="assets/icons/whatsapp.svg" class="w-full h-full object-contain" alt="whatsapp">
                             </div>
@@ -148,7 +143,7 @@
                                 <img src="assets/icons/facebook.svg" class="w-full h-full object-contain" alt="facebook">
                             </div>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/branapparell?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
                             <div class="w-6 h-6 flex shrink-0 overflow-hidden">
                                 <img src="assets/icons/instagram.svg" class="w-full h-full object-contain"
                                     alt="instagram">

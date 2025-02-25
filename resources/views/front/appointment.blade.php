@@ -16,25 +16,25 @@
                 <span class="text-cp-light-grey">/</span>
                 <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Appointment</p>
             </div>
-            <h1 class="font-extrabold text-4xl leading-[45px]">We Help You to Build Awesome Project</h1>
+            <h1 class="font-extrabold text-4xl leading-[45px]">Custom Baju Impian dengan Sablon Terbaik</h1>
             <div class="flex flex-col gap-5">
                 <div class="flex items-center gap-[10px]">
                     <div class="w-6 h-6 flex shrink-0">
                         <img src="assets/icons/global.svg" alt="icon">
                     </div>
-                    <p class="text-cp-dark-blue font-semibold">No 96, Anggapati Jakarta</p>
+                    <p class="font-semibold">Bandungan, Ambarawa</p>
                 </div>
                 <div class="flex items-center gap-[10px]">
                     <div class="w-6 h-6 flex shrink-0">
                         <img src="assets/icons/call.svg" alt="icon">
                     </div>
-                    <p class="text-cp-dark-blue font-semibold">(021) 22081996</p>
+                    <p class="font-semibold">+62 851-6280-8272</p>
                 </div>
                 <div class="flex items-center gap-[10px]">
                     <div class="w-6 h-6 flex shrink-0">
                         <img src="assets/icons/monitor-mobbile.svg" alt="icon">
                     </div>
-                    <p class="text-cp-dark-blue font-semibold">BranApparel.com</p>
+                    <p class="font-semibold">BranApparel.com</p>
                 </div>
             </div>
         </div>
@@ -137,8 +137,8 @@
                 </div>
             </div>
             <button type="submit"
-                class="bg-cp-dark-red p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Book
-                Appointment</button>
+                class="bg-cp-dark-red p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
+                Hubungi Sekarang</button>
         </form>
     </div>
     <div id="Clients"
@@ -206,7 +206,7 @@
             <p
                 class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                 SUCCESS CLIENTS</p>
-            <h2 class="font-bold text-4xl leading-[45px] text-center">Our Satisfied Clients<br>From Worldwide Company
+            <h2 class="font-bold text-4xl leading-[45px] text-center">Kepercayaan Klien,<br>Kami Wujudkan!
             </h2>
         </div>
         <div class="main-carousel w-full">
@@ -284,12 +284,7 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
-                    <a href="">
-                        <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                            <img src="assets/icons/youtube.svg" class="w-full h-full object-contain" alt="youtube">
-                        </div>
-                    </a>
-                    <a href="">
+                    <a href="https://wa.me/+6285162808272?text=Halo%20Admin%2C%20Saya%20ingin%20memesan%20produk%20di%20Bran%20Apparel">
                         <div class="w-6 h-6 flex shrink-0 overflow-hidden">
                             <img src="assets/icons/whatsapp.svg" class="w-full h-full object-contain" alt="whatsapp">
                         </div>
@@ -299,7 +294,7 @@
                             <img src="assets/icons/facebook.svg" class="w-full h-full object-contain" alt="facebook">
                         </div>
                     </a>
-                    <a href="">
+                    <a href="https://www.instagram.com/branapparell?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
                         <div class="w-6 h-6 flex shrink-0 overflow-hidden">
                             <img src="assets/icons/instagram.svg" class="w-full h-full object-contain" alt="instagram">
                         </div>
@@ -337,8 +332,7 @@
                         Conditions</a>
                     <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Contact
                         Us</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Download
-                        Template</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">
                 </div>
             </div>
         </div>
