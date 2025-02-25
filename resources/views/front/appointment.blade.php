@@ -137,7 +137,7 @@
                 </div>
             </div>
             <button type="submit"
-                class="bg-cp-dark-red p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Book
+                class="bg-cp-dark-red p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Book
                 Appointment</button>
         </form>
     </div>

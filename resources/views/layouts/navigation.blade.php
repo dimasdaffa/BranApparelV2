@@ -35,7 +35,7 @@
                                     {{ __('Hero Section') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('admin.principles.index')">
-                                    {{ __('Our Principles') }}
+                                    {{ __('Our Values') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('admin.statistics.index')">
                                     {{ __('Company Stats') }}

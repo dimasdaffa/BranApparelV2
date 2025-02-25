@@ -25,6 +25,9 @@
         <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
             <a href="">Blog</a>
         </li>
+        <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
+            <a href="">Gallery</a>
+        </li>
         <li
             class="{{ request()->routeIs('front.about') ? 'text-cp-dark-blue' : '' }}
  font-semibold hover:text-cp-dark-blue transition-all duration-300">
@@ -32,5 +35,5 @@
         </li>
     </ul>
     <a href="{{ route('front.appointment') }}"
-        class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Hubungi Kami</a>
+        class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Hubungi Kami</a>
 </nav>

@@ -1477,7 +1477,7 @@ video {
 
 .hover\:text-cp-dark-blue:hover {
   --tw-text-opacity: 1;
-  color: rgb(49 46 203 / var(--tw-text-opacity));
+  color: rgba(255, 0, 0, 0.70);
 }
 
 .hover\:text-gray-900:hover {
@@ -1496,8 +1496,8 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:shadow-\[0_12px_30px_0_\#312ECB66\]:hover {
-  --tw-shadow: 0 12px 30px 0 #312ECB66;
+.hover\:shadow-\[0_12px_30px_0_\#FF0000\]:hover {
+  --tw-shadow: 0 12px 30px 0 #FF0000;
   --tw-shadow-colored: 0 12px 30px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
