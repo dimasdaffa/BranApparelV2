@@ -43,7 +43,7 @@
             @csrf
             <div class="flex items-center gap-[18px]">
                 <div class="flex flex-col gap-2 flex w-full">
-                    <p class="font-semibold">Complete Name</p>
+                    <p class="font-semibold">Nama Lengkap</p>
                     <div
                         class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
                         <div class="w-[18px] h-[18px] flex shrink-0">
@@ -51,11 +51,11 @@
                         </div>
                         <input type="text" name="name" id=""
                             class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full"
-                            placeholder="Write your complete name" required>
+                            placeholder="Tulis nama lengkap" required>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 flex w-full">
-                    <p class="font-semibold">Email Address</p>
+                    <p class="font-semibold">Email</p>
                     <div
                         class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
                         <div class="w-[18px] h-[18px] flex shrink-0">
@@ -63,13 +63,13 @@
                         </div>
                         <input type="email" name="email" id=""
                             class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full"
-                            placeholder="Write your email address" required>
+                            placeholder="Alamat email" required>
                     </div>
                 </div>
             </div>
             <div class="flex items-center gap-[18px]">
                 <div class="flex flex-col gap-2 flex w-full">
-                    <p class="font-semibold">Phone Number</p>
+                    <p class="font-semibold">Nomor Telepon</p>
                     <div
                         class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
                         <div class="w-[18px] h-[18px] flex shrink-0">
@@ -77,25 +77,25 @@
                         </div>
                         <input type="tel" name="phone_number" id=""
                             class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full"
-                            placeholder="Write your phone number" required>
+                            placeholder="Whatsapp untuk dihubungi" required>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 flex w-full">
-                    <p class="font-semibold">Meeting Date</p>
+                    <p class="font-semibold">Jadwal Bertemu</p>
                     <div
                         class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white relative">
                         <div class="w-[18px] h-[18px] flex shrink-0">
                             <img src="assets/icons/calendar.svg" alt="icon">
                         </div>
                         <button type="button" id="dateButton"
-                            class="p-0 bg-transparent w-full text-left border-none outline-none">Choose the date</button>
+                            class="p-0 bg-transparent w-full text-left border-none outline-none">Pilih Tanggal</button>
                         <input type="date" name="meeting_at" id="dateInput" class="absolute opacity-0 -z-10">
                     </div>
                 </div>
             </div>
             <div class="flex items-center gap-[18px]">
                 <div class="flex flex-col gap-2 flex w-full">
-                    <p class="font-semibold">Your Interest</p>
+                    <p class="font-semibold">Pilihanmu</p>
                     <div
                         class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
                         <div class="w-[18px] h-[18px] flex shrink-0">
@@ -104,7 +104,7 @@
                         <select name="product_id" id=""
                             class="appearance-none outline-none w-full invalid:font-normal font-semibold px-[10px] -mx-[10px]"
                             required>
-                            <option value="" hidden>Choose a project</option>
+                            <option value="" hidden>Pilih Custom Baju</option>
                             @foreach ($products as $product)
                                 <option value="{{ $product->id }}">{{ $product->name }}</option>
                             @endforeach
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 flex w-full">
-                    <p class="font-semibold">Budget Available</p>
+                    <p class="font-semibold">Perkiraan Biaya</p>
                     <div
                         class="flex items-center gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
                         <div class="w-[18px] h-[18px] flex shrink-0">
@@ -120,12 +120,12 @@
                         </div>
                         <input type="number" name="budget" id=""
                             class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full"
-                            placeholder="What is your budget" required>
+                            placeholder="Berapa biaya yang disediakan" required>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-2 flex w-full">
-                <p class="font-semibold">Project Brief</p>
+                <p class="font-semibold">Detail Pesanan</p>
                 <div
                     class="flex gap-[10px] p-[14px_20px] border border-[#E8EAF2] focus-within:border-cp-dark-blue transition-all duration-300 rounded-xl bg-white">
                     <div class="w-[18px] h-[18px] flex shrink-0 mt-[3px]">
@@ -133,7 +133,7 @@
                     </div>
                     <textarea name="brief" id="" rows="6"
                         class="appearance-none outline-none bg-white placeholder:font-normal placeholder:text-cp-black font-semibold w-full resize-none"
-                        placeholder="Tell us the project brief"></textarea>
+                        placeholder="Beri detail pesanan produk"></textarea>
                 </div>
             </div>
             <button type="submit"

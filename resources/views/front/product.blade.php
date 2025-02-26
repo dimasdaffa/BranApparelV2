@@ -1,42 +1,10 @@
 @extends('front.layouts.app')
 @section('content')
-    <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
+    <div id="header" class="bg-[#F6F7FA] relative ">
         <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
             {{-- reusable navbar --}}
-            <x-navbar/>
-            @forelse ($hero_section as $hero)
-                <input type="hidden" name="path_video" id="path_video" value="{{ $hero->path_video }}">
-                <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20">
-                    <div class="flex items-center bg-white p-[8px_16px] gap-[10px] rounded-full w-fit">
-                        <div class="w-5 h-5 flex shrink-0 overflow-hidden">
-                            <img src="{{ asset('assets/icons/crown.svg') }}" class="object-contain" alt="icon">
-                        </div>
-                        <p class="font-semibold text-sm">{{ $hero->achievement }}</p>
-                    </div>
-                    <div class="flex flex-col gap-[10px]">
-                        <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">{{ $hero->heading }}</h1>
-                        <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{ $hero->subheading }}</p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <a href=""
-                            class="bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Lebih Banyak</a>
-                        <button class="bg-cp-darker-red p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]"
-                            onclick="{modal.show()}">
-                            <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                                <img src="{{ asset('assets/icons/play-circle.svg') }}" class="w-full h-full object-contain"
-                                    alt="icon">
-                            </div>
-                            <span>Watch Video</span>
-                        </button>
-                    </div>
-                </div>
+            <x-navbar />
         </div>
-        <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
-            <img src="{{ Storage::url($hero->banner) }}" class="object-cover w-full h-full" alt="banner">
-        </div>
-    @empty
-        <p>belum ada data</p>
-        @endforelse
     </div>
     <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
         <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
@@ -61,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
+    {{-- <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
         <div class="flex items-center justify-between">
             <div class="flex flex-col gap-[14px]">
                 <p
@@ -97,9 +65,9 @@
             @endforelse
 
         </div>
-    </div>
+    </div> --}}
 
-    <div id="Stats" class="bg-cp-darker-red w-full mt-20">
+    {{-- <div id="Stats" class="bg-cp-darker-red w-full mt-20">
         <div class="container max-w-[1000px] mx-auto py-10">
             <div class="flex flex-wrap items-center justify-between p-[10px]">
                 @forelse ($statistics as $statistic)
@@ -117,7 +85,7 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
     <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
 
         @forelse ($products as $product)
@@ -148,9 +116,11 @@
     <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
         <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
             <div class="flex flex-col gap-[14px] items-center">
-                <p class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                <p
+                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                     KLIEN KAMI</p>
-                <h2 class="font-bold text-4xl leading-[45px] text-center">Kami Berbagi Mimpi yang Sama <br> Menjadi Yang Terbaik !
+                <h2 class="font-bold text-4xl leading-[45px] text-center">Kami Berbagi Mimpi yang Sama <br> Menjadi Yang
+                    Terbaik !
                 </h2>
             </div>
             <div
@@ -198,8 +168,7 @@
     </div>
     <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
         <div class="flex flex-col gap-[14px] items-center">
-            <p
-                class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+            <p class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
                 SUCCESS CLIENTS</p>
             <h2 class="font-bold text-4xl leading-[45px] text-center">Kepercayaan Klien,<br>Kami Wujudkan!
             </h2>
@@ -265,127 +234,8 @@
             @endforelse
         </div>
     </div>
-    <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
-        <div class="flex items-center justify-between">
-            <div class="flex flex-col gap-[14px]">
-                <p
-                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                    GALLERY</p>
-                <h2 class="font-bold text-4xl leading-[45px]">Lihat lebih dekat bagaimana kami<br>menghadirkan baju custom berkualitas!</h2>
-            </div>
-            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
-        </div>
-        <div
-            class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
-            <div
-                class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-                <div class="w-[55px] h-[55px] flex shrink-0">
-                    <img src="{{ asset('assets/icons/cup-red.svg') }}" alt="icon">
-                </div>
-                <hr class="border-[#E8EAF2]">
-                <p class="font-bold text-xl leading-[30px]">Proses Produksi</p>
-                <hr class="border-[#E8EAF2]">
-                <p class="text-cp-light-grey">Setiap baju dibuat dengan ketelitian dan bahan berkualitas untuk hasil terbaik.</p>
-            </div>
-            <div
-                class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-                <div class="w-[55px] h-[55px] flex shrink-0">
-                    <img src="{{ asset('assets/icons/cup-red.svg') }}" alt="icon">
-                </div>
-                <hr class="border-[#E8EAF2]">
-                <p class="font-bold text-xl leading-[30px]">Proses Desain</p>
-                <hr class="border-[#E8EAF2]">
-                <p class="text-cp-light-grey">Dari ide ke realitas! Kami wujudkan desain custom yang sesuai dengan Anda.</p>
-            </div>
-            <div
-                class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-                <div class="w-[55px] h-[55px] flex shrink-0">
-                    <img src="{{ asset('assets/icons/cup-red.svg') }}" alt="icon">
-                </div>
-                <hr class="border-[#E8EAF2]">
-                <p class="font-bold text-xl leading-[30px]">Proses Packing</p>
-                <hr class="border-[#E8EAF2]">
-                <p class="text-cp-light-grey">Dikemas dengan rapi dan aman, memastikan pesanan Anda sampai dalam kondisi sempurna.</p>
-            </div>
-            <div
-                class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
-                <div class="w-[55px] h-[55px] flex shrink-0">
-                    <img src="{{ asset('assets/icons/cup-red.svg') }}" alt="icon">
-                </div>
-                <hr class="border-[#E8EAF2]">
-                <p class="font-bold text-xl leading-[30px]">Proses Quality Control</p>
-                <hr class="border-[#E8EAF2]">
-                <p class="text-cp-light-grey">Kami cek setiap detail agar hanya produk terbaik yang Anda terima!</p>
-            </div>
-        </div>
-    </div>
-    <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
-        <div class="container max-w-[1000px] mx-auto">
-            <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
-                <div class="flex flex-col gap-[30px]">
-                    <div class="flex flex-col gap-[10px]">
-                        <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
-                    </div>
-                    <a href="{{ route('front.appointment') }}" class="p-5 bg-cp-darker-red rounded-xl text-white w-fit font-bold">Hubungi
-                        Kami</a>
-                </div>
-                <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
-                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                        <button class="accordion-button flex justify-between gap-1 items-center"
-                            data-accordion="accordion-faq-1">
-                            <span class="font-bold text-lg leading-[27px] text-left">Berapa lama waktu produksi untuk baju custom?</span>
-                            <div class="arrow w-9 h-9 flex shrink-0">
-                                <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                    class="transition-all duration-300" alt="icon">
-                            </div>
-                        </button>
-                        <div id="accordion-faq-1" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Waktu produksi bervariasi, biasanya 5-10 hari kerja, tergantung pada jumlah pesanan dan tingkat kerumitan desain. Kami akan menginformasikan estimasi waktu sebelum produksi dimulai.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                        <button class="accordion-button flex justify-between gap-1 items-center"
-                            data-accordion="accordion-faq-2">
-                            <span class="font-bold text-lg leading-[27px] text-left">Apakah bisa membuat desain sendiri atau harus dari template?</span>
-                            <div class="arrow w-9 h-9 flex shrink-0">
-                                <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                    class="transition-all duration-300" alt="icon">
-                            </div>
-                        </button>
-                        <div id="accordion-faq-2" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Tentu! Anda bisa mengirimkan desain sendiri atau memilih dari template yang kami sediakan. Tim kami juga siap membantu menyempurnakan desain Anda.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                        <button class="accordion-button flex justify-between gap-1 items-center"
-                            data-accordion="accordion-faq-3">
-                            <span class="font-bold text-lg leading-[27px] text-left">Apakah ada minimum order untuk pemesanan custom?</span>
-                            <div class="arrow w-9 h-9 flex shrink-0">
-                                <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                    class="transition-all duration-300" alt="icon">
-                            </div>
-                        </button>
-                        <div id="accordion-faq-3" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Kami menerima pemesanan mulai dari 1 pcs, tetapi untuk jumlah besar, kami menawarkan harga spesial!</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                        <button class="accordion-button flex justify-between gap-1 items-center"
-                            data-accordion="accordion-faq-4">
-                            <span class="font-bold text-lg leading-[27px] text-left">Bahan dan jenis sablon apa saja yang tersedia?</span>
-                            <div class="arrow w-9 h-9 flex shrink-0">
-                                <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                    class="transition-all duration-300" alt="icon">
-                            </div>
-                        </button>
-                        <div id="accordion-faq-4" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Kami menyediakan berbagai pilihan bahan berkualitas, seperti Cotton Combed, Polyester, dan Dri-Fit. Untuk sablon, tersedia Plastisol, Polyflex, DTG, dan Sublimasi, sesuai kebutuhan Anda.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    
     <footer class="bg-cp-darker-red w-full relative overflow-hidden mt-20">
         <div
             class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
@@ -401,7 +251,8 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
-                    <a href="https://wa.me/+6285162808272?text=Halo%20Admin%2C%20Saya%20ingin%20memesan%20produk%20di%20Bran%20Apparel">
+                    <a
+                        href="https://wa.me/+6285162808272?text=Halo%20Admin%2C%20Saya%20ingin%20memesan%20produk%20di%20Bran%20Apparel">
                         <div class="w-6 h-6 flex shrink-0 overflow-hidden">
                             <img src="{{ asset('assets/icons/whatsapp.svg') }}" class="w-full h-full object-contain"
                                 alt="whatsapp">
@@ -413,7 +264,8 @@
                                 alt="facebook">
                         </div>
                     </a>
-                    <a href="https://www.instagram.com/branapparell?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                    <a
+                        href="https://www.instagram.com/branapparell?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
                         <div class="w-6 h-6 flex shrink-0 overflow-hidden">
                             <img src="{{ asset('assets/icons/instagram.svg') }}" class="w-full h-full object-contain"
                                 alt="instagram">
