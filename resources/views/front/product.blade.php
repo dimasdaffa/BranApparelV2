@@ -29,63 +29,7 @@
             </div>
         </div>
     </div>
-    {{-- <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
-        <div class="flex items-center justify-between">
-            <div class="flex flex-col gap-[14px]">
-                <p
-                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                    OUR VALUES</p>
-                <h2 class="font-bold text-4xl leading-[45px]">Kami Bukan Yang Pertama <br> Tetapi Kami Yang Terbaik</h2>
-            </div>
-            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
-        </div>
-        <div class="flex flex-wrap items-center gap-[30px] justify-center">
-
-            @forelse ($principles as $principle)
-                <div
-                    class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
-                    <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
-                        <img src="{{ Storage::url($principle->thumbnail) }}"
-                            class="object-cover object-center w-full h-full" alt="thumbnails">
-                    </div>
-                    <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
-                        <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-                            <img src="{{ Storage::url($principle->icon) }}" class="w-full h-full object-contain"
-                                alt="icon">
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <p class="title font-bold text-xl leading-[30px]">{{ $principle->name }}</p>
-                            <p class="leading-[30px] text-cp-light-grey">{{ $principle->subtitle }}</p>
-                        </div>
-                        <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
-                    </div>
-                </div>
-            @empty
-                <p>belum ada data</p>
-            @endforelse
-
-        </div>
-    </div> --}}
-
-    {{-- <div id="Stats" class="bg-cp-darker-red w-full mt-20">
-        <div class="container max-w-[1000px] mx-auto py-10">
-            <div class="flex flex-wrap items-center justify-between p-[10px]">
-                @forelse ($statistics as $statistic)
-                    <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
-                        <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-                            <img src="{{ Storage::url($statistic->icon) }}" class="object-contain w-full h-full"
-                                alt="icon">
-                        </div>
-                        <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">{{ $statistic->goal }}</p>
-                        <p class="text-cp-light-grey">{{ $statistic->name }}</p>
-                    </div>
-                @empty
-                    <p>belum ada data</p>
-                @endforelse
-
-            </div>
-        </div>
-    </div> --}}
+   
     <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
 
         @forelse ($products as $product)
@@ -235,83 +179,8 @@
         </div>
     </div>
 
-    
-    <footer class="bg-cp-darker-red w-full relative overflow-hidden mt-20">
-        <div
-            class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
-            <div class="flex flex-col gap-10">
-                <div class="flex items-center gap-3">
-                    <div class="flex shrink-0 h-[43px] overflow-hidden">
-                        <img src="{{ asset('assets/logo/logo.svg') }}" class="object-contain w-full h-full"
-                            alt="logo">
-                    </div>
-                    <div class="flex flex-col">
-                        <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">BranApparel</p>
-                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">From Us to All Around The Worlds</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a
-                        href="https://wa.me/+6285162808272?text=Halo%20Admin%2C%20Saya%20ingin%20memesan%20produk%20di%20Bran%20Apparel">
-                        <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                            <img src="{{ asset('assets/icons/whatsapp.svg') }}" class="w-full h-full object-contain"
-                                alt="whatsapp">
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                            <img src="{{ asset('assets/icons/facebook.svg') }}" class="w-full h-full object-contain"
-                                alt="facebook">
-                        </div>
-                    </a>
-                    <a
-                        href="https://www.instagram.com/branapparell?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                        <div class="w-6 h-6 flex shrink-0 overflow-hidden">
-                            <img src="{{ asset('assets/icons/instagram.svg') }}" class="w-full h-full object-contain"
-                                alt="instagram">
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="flex flex-wrap gap-[50px]">
-                <div class="flex flex-col w-[200px] gap-3">
-                    <p class="font-bold text-lg text-white">Products</p>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">General
-                        Contract</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Building
-                        Assessment</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">3D Paper
-                        Builder</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Legal
-                        Constructions</a>
-                </div>
-                <div class="flex flex-col w-[200px] gap-3">
-                    <p class="font-bold text-lg text-white">About</p>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">We’re
-                        Hiring</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Our Big
-                        Purposes</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Investor
-                        Relations</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Media
-                        Press</a>
-                </div>
-                <div class="flex flex-col w-[200px] gap-3">
-                    <p class="font-bold text-lg text-white">Useful Links</p>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Privacy
-                        & Policy</a>
-                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms &
-                        Conditions</a>
-                    <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Hubungi
-                        Kami</a>
 
-                </div>
-            </div>
-        </div>
-        <div class="absolute -bottom-[135px] w-full">
-            <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">BranApparel</p>
-        </div>
-    </footer>
+    <x-footer />
     <div id="video-modal" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full lg:w-1/2 max-h-full">

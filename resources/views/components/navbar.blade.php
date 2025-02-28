@@ -23,8 +23,9 @@
  font-semibold hover:text-cp-dark-blue transition-all duration-300">
             <a href="{{ route('front.team') }}">Portfolio</a>
         </li>
-        <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="">Blog</a>
+        <li class="{{ request()->routeIs('front.blog') ? 'text-cp-dark-blue' : '' }}
+ font-semibold hover:text-cp-dark-blue transition-all duration-300">
+            <a href="{{ route('front.blog') }}">Blog</a>
         </li>
         <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
             <a href="">Gallery</a>
