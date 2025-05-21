@@ -36,7 +36,7 @@
                                     <div class="w-6 h-6 flex shrink-0">
                                         <img src="assets/icons/tick-circle.svg" alt="icon">
                                     </div>
-                                    <p class="leading-[26px] font-semibold">{{$about->keypoint}}</p>
+                                    <p class="leading-[26px] font-semibold">{{$keypoint->keypoint}}</p>
                                 </div>
                             @empty
                             @endforelse

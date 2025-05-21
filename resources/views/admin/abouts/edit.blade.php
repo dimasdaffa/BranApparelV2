@@ -25,7 +25,7 @@
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
 
-                    <div class="mt-4">
+                    <div class="mt-4">  
                         <x-input-label for="thumbnail" :value="__('thumbnail')" />
                         <img src="{{ Storage::url($about->thumbnail) }}" alt=""
                             class="rounded-2xl object-cover w-[90px] h-[90px]">
