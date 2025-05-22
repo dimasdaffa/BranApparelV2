@@ -12,8 +12,6 @@
             <div class="breadcrumb flex items-center gap-[30px]">
                 <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
                 <span class="text-cp-light-grey">/</span>
-                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Product</p>
-                <span class="text-cp-light-grey">/</span>
                 <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Appointment</p>
             </div>
             <h1 class="font-extrabold text-4xl leading-[45px]">Custom Baju Impian dengan Sablon Terbaik</h1>
@@ -141,135 +139,7 @@
                 Hubungi Sekarang</button>
         </form>
     </div>
-    <div id="Clients"
-        class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20 relative z-10">
-        <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
-        <div class="logo-container flex flex-wrap gap-5 justify-center">
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-44.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-51.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="assets/logo/logo-51.svg" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
-        <div class="flex flex-col gap-[14px] items-center">
-            <p
-                class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                SUCCESS CLIENTS</p>
-            <h2 class="font-bold text-4xl leading-[45px] text-center">Kepercayaan Klien,<br>Kami Wujudkan!
-            </h2>
-        </div>
-        <div class="main-carousel w-full">
 
-            @forelse ($testimonials as $testimonial)
-                <div
-                    class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-                    <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                        <div class="flex flex-col gap-[30px]">
-                            <div class="h-9 overflow-hidden">
-                                <img src="{{ Storage::url($testimonial->client->logo) }}" class="object-contain"
-                                    alt="icon">
-                            </div>
-                            <div class="relative pt-[27px] pl-[30px]">
-                                <div class="absolute top-0 left-0">
-                                    <img src="{{ asset('assets/icons/quote.svg') }}" alt="icon">
-                                </div>
-                                <p class="font-semibold text-2xl leading-[46px] relative z-10">{{ $testimonial->message }}
-                                </p>
-                            </div>
-                            <div class="flex items-center justify-between pl-[30px]">
-                                <div class="flex items-center gap-6">
-                                    <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                        <img src="{{ Storage::url($testimonial->client->avatar) }}"
-                                            class="w-full h-full object-cover" alt="photo">
-                                    </div>
-                                    <div class="flex flex-col justify-center gap-1">
-                                        <p class="font-bold">{{ $testimonial->client->name }}</p>
-                                        <p class="text-sm text-cp-light-grey">{{ $testimonial->client->occupation }}</p>
-                                    </div>
-                                </div>
-                                <div class="flex flex-nowrap">
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
-                        </div>
-                    </div>
-                    <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                        <img src="{{ Storage::url($testimonial->thumbnail) }}"
-                            class="w-full h-full object-cover object-center" alt="thumbnail">
-                    </div>
-                </div>
-            @empty
-                <p>belum ada data</p>
-            @endforelse
-        </div>
-    </div>
     <x-footer />
 @endsection
 @push('after-scripts')
@@ -281,3 +151,4 @@
     <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
     <script src="js/carousel.js"></script>
 @endpush
+X

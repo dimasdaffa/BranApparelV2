@@ -6,7 +6,7 @@
             <x-navbar />
         </div>
     </div>
-    <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
+    {{-- <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
         <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
         <div class="logo-container flex flex-wrap gap-5 justify-center">
             <div
@@ -28,8 +28,8 @@
                 </div>
             </div>
         </div>
-    </div>
-   
+    </div> --}}
+
     <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
 
         @forelse ($products as $product)
@@ -57,7 +57,7 @@
         @endforelse
 
     </div>
-    <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
+    {{-- <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
         <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
             <div class="flex flex-col gap-[14px] items-center">
                 <p
@@ -177,7 +177,7 @@
                 <p>belum ada data</p>
             @endforelse
         </div>
-    </div>
+    </div> --}}
 
 
     <x-footer />

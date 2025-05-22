@@ -45,7 +45,7 @@
                     </div>
 
                     <x-nav-link :href="route('admin.teams.index')" :active="request()->routeIs('admin.teams.index')">
-                        {{ __('Our Teams') }}
+                        {{ __('Our Pelanggan') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.index')">

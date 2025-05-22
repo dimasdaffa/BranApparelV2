@@ -36,11 +36,16 @@ class FrontController extends Controller
         return view('front.team', compact('teams', 'statistics'));
     }
 
-    public function about()
+    public function faq()
     {
-        $abouts = CompanyAbout::take(3)->get();
         $statistics = CompanyStatistic::take(4)->get();
-        return view('front.about', compact('statistics', 'abouts'));
+        $principles = OurPrinciple::take(4)->get();
+        $products = Product::take(4)->get();
+        // $teams = OurTeam::take(10)->get();
+        $teams = OurTeam::all();
+        $testimonials = Testimonial::take(5)->get();
+        $hero_section = HeroSection::orderByDesc('id')->take(1)->get();
+        return view('front.faq', compact('statistics', 'principles', 'products', 'teams', 'testimonials', 'hero_section'));
     }
 
     public function appointment()
@@ -79,5 +84,16 @@ class FrontController extends Controller
         $testimonials = Testimonial::take(5)->get();
         $hero_section = HeroSection::orderByDesc('id')->take(1)->get();
         return view('front.index', compact('statistics', 'principles', 'products', 'teams', 'testimonials', 'hero_section'));
+    }
+    public function gallery()
+    {
+        $statistics = CompanyStatistic::take(4)->get();
+        $principles = OurPrinciple::take(4)->get();
+        $products = Product::take(3)->get();
+        // $teams = OurTeam::take(10)->get();
+        $teams = OurTeam::all();
+        $testimonials = Testimonial::take(5)->get();
+        $hero_section = HeroSection::orderByDesc('id')->take(1)->get();
+        return view('front.gallery', compact('statistics', 'principles', 'products', 'teams', 'testimonials', 'hero_section'));
     }
 }

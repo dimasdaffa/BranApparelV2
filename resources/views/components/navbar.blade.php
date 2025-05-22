@@ -27,13 +27,15 @@
  font-semibold hover:text-cp-dark-blue transition-all duration-300">
             <a href="{{ route('front.blog') }}">Blog</a>
         </li>
-        <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="">Gallery</a>
-        </li>
-        <li
-            class="{{ request()->routeIs('front.about') ? 'text-cp-dark-blue' : '' }}
+        <li class="{{ request()->routeIs('front.gallery') ? 'text-cp-dark-blue' : '' }}
  font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="{{ route('front.about') }}">About</a>
+            <a href="{{ route('front.gallery') }}">Gallery</a>
+        </li>
+
+        <li
+            class="{{ request()->routeIs('front.faq') ? 'text-cp-dark-blue' : '' }}
+ font-semibold hover:text-cp-dark-blue transition-all duration-300">
+            <a href="{{ route('front.faq') }}">FAQ</a>
         </li>
     </ul>
     <a href="{{ route('front.appointment') }}"
