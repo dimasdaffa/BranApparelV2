@@ -41,28 +41,24 @@
         @endforelse
     </div>
     <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
-        <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
-        <div class="logo-container flex flex-wrap gap-5 justify-center">
+    <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
+    <div class="logo-container flex flex-wrap gap-5 justify-center">
+        @forelse($teams as $team)
             <div
                 class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="{{ asset('assets/logo/logo-54.svg') }}" class="object-contain w-full h-full" alt="logo">
+                <div class="overflow-hidden h-9 w-9">
+                    <img src="{{ Storage::url($team->avatar) }}"
+                         class="object-cover w-full h-full"
+                         alt="{{ $team->name }}">
                 </div>
+                <p class="font-bold text-lg">{{ $team->name }}</p>
             </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="{{ asset('assets/logo/logo-52.svg') }}" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-            <div
-                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-                <div class="overflow-hidden h-9">
-                    <img src="{{ asset('assets/logo/logo-55.svg') }}" class="object-contain w-full h-full" alt="logo">
-                </div>
-            </div>
-        </div>
+        @empty
+            <p>Belum ada data</p>
+        @endforelse
     </div>
+</div>
+
     <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
         <div class="flex items-center justify-between">
             <div class="flex flex-col gap-[14px]">
@@ -121,7 +117,7 @@
         </div>
     </div>
     <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
-        @forelse ($products->slice(0, 3) as $product) 
+        @forelse ($products->slice(0, 3) as $product)
             <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
                 <div class="w-[400px] h-[550px] flex shrink-0 overflow-hidden rounded-[20px]">
                     <img src="{{ Storage::url($product->thumbnail) }}" class="w-full h-full object-cover rounded-[20px]" alt="thumbnail">
@@ -172,7 +168,7 @@
             <div
                 class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
 
-                @forelse ($teams as $team)
+                @forelse ($teams->slice(0, 7) as $team)
                     <div
                         class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
                         <div
