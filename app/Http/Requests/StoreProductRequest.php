@@ -16,16 +16,16 @@ class StoreProductRequest extends FormRequest
 
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
         return [
             'name' => ['required', 'string', 'max:255'],
             'tagline' => ['required', 'string', 'max:255'],
-            'thumbnail' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'thumbnail' => ['sometimes', 'image', 'mimes:png,jpg,jpeg'],
             'about' => ['required', 'string', 'max:65535'],
+            'images.*' => ['sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:5120'],
+            'images' => ['sometimes', 'array', 'max:10'], // Limit to 10 images per upload
         ];
     }
 }

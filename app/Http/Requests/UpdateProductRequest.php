@@ -26,6 +26,10 @@ class UpdateProductRequest extends FormRequest
             'tagline' => ['required', 'string', 'max:255'],
             'thumbnail' => ['sometimes', 'image', 'mimes:png,jpg,jpeg'],
             'about' => ['required', 'string', 'max:65535'],
+            'images.*' => ['sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:5120'],
+            'images' => ['sometimes', 'array', 'max:10'], // Limit to 10 images per upload
+            'delete_images' => ['sometimes', 'array'],
+            'primary_image_id' => ['sometimes', 'numeric', 'exists:product_images,id'],
         ];
     }
 }

@@ -16,7 +16,18 @@ class Product extends Model
         'tagline',
         'name',
     ];
-
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
+    
+    /**
+     * Get the primary image for the product.
+     */
+    public function primaryImage()
+    {
+        return $this->hasOne(ProductImage::class)->where('is_primary', true);
+    }
     //dalam satu product akan memiliki banyak appointment
     public function appointments(){
         return $this->hasMany(Appointment::class);
