@@ -139,14 +139,15 @@
                 Pesan Sekarang</a>
         </div>
     </div>
+
+    @empty
+    <p>belum ada data</p>
+    @endforelse
     <div class="text-center">
         <a href="{{ route('front.product') }}"
             class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
             Load More</a>
     </div>
-    @empty
-    <p>belum ada data</p>
-    @endforelse
 
 </div>
 <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
