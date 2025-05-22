@@ -17,4 +17,7 @@ class DatabaseSeeder extends Seeder
         //Jalankan role permission seeder yang bersambung dengan RolePermissionSeeder.php dengan migrate
         $this->call(RolePermissionSeeder::class);
     }
+
 }
+
+
