@@ -6,61 +6,118 @@
         <x-navbar />
     </div>
 </div>
-{{-- <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
-    <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
-    <div class="logo-container flex flex-wrap gap-5 justify-center">
-        <div
-            class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="{{ asset('assets/logo/logo-54.svg') }}" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div
-            class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="{{ asset('assets/logo/logo-52.svg') }}" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-        <div
-            class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
-            <div class="overflow-hidden h-9">
-                <img src="{{ asset('assets/logo/logo-55.svg') }}" class="object-contain w-full h-full" alt="logo">
-            </div>
-        </div>
-    </div>
-</div> --}}
 
 <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
-
     @forelse ($products as $product)
     <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
         <div class="w-[400px] h-[550px] flex shrink-0 overflow-hidden rounded-[20px]">
-            <img src="{{ Storage::url($product->thumbnail) }}" class="w-full h-full object-cover rounded-[20px]"
-                alt="thumbnail">
+            <!-- Make the thumbnail clickable to open gallery -->
+            <img src="{{ Storage::url($product->thumbnail) }}"
+                 class="w-full h-full object-cover rounded-[20px] cursor-pointer hover:opacity-90 transition-opacity"
+                 alt="{{ $product->name }}"
+                 onclick="openProductGallery({{ $product->id }})"
+                 data-product-id="{{ $product->id }}">
         </div>
         <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-            <p
-                class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                {{ $product->tagline }}</p>
+            <p class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                {{ $product->tagline }}
+            </p>
             <div class="flex flex-col gap-[10px]">
-                <h2 class="font-bold text-4xl leading-[45px]">{{ $product->name }}
-                </h2>
+                <h2 class="font-bold text-4xl leading-[45px]">{{ $product->name }}</h2>
                 <p class="leading-[30px] text-cp-light-grey">{{ $product->about }}</p>
             </div>
             <a href="{{ route('front.appointment') }}"
                 class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
-                Pesan Sekarang</a>
+                Pesan Sekarang
+            </a>
         </div>
     </div>
     @empty
     <p>belum ada data</p>
     @endforelse
-
 </div>
 
+<!-- Product Gallery Modals -->
+@foreach ($products as $product)
+<div id="product-gallery-{{ $product->id }}" tabindex="-1" aria-hidden="true"
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 h-full bg-black bg-opacity-75">
+    <div class="relative p-4 w-full max-w-4xl max-h-full mx-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                <h3 class="text-xl font-semibold text-gray-900">
+                    {{ $product->name }} - Galeri Foto
+                </h3>
+                <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                        onclick="closeProductGallery({{ $product->id }})">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
 
+            <!-- Modal body - Grid of images -->
+            <div class="p-4 md:p-5">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Main product thumbnail -->
+                    <div class="relative group">
+                        <img src="{{ Storage::url($product->thumbnail) }}"
+                             class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-90"
+                             alt="{{ $product->name }}"
+                             onclick="openFullImage('{{ Storage::url($product->thumbnail) }}', '{{ $product->name }}')">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Product images -->
+                    @foreach($product->images as $image)
+                    <div class="relative group">
+                        <img src="{{ Storage::url($image->image_path) }}"
+                             class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-90"
+                             alt="{{ $product->name }} - Image {{ $loop->iteration }}"
+                             onclick="openFullImage('{{ Storage::url($image->image_path) }}', '{{ $product->name }} - Image {{ $loop->iteration }}')">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+
+<!-- Full Image Modal -->
+<div id="fullImageModal" tabindex="-1" aria-hidden="true"
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[60] justify-center items-center w-full inset-0 h-full bg-black bg-opacity-90">
+    <div class="relative p-4 w-full h-full flex items-center justify-center">
+        <!-- Close button -->
+        <button type="button"
+                class="absolute top-4 right-4 text-white bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-2 inline-flex items-center justify-center z-10"
+                onclick="closeFullImage()">
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+            </svg>
+            <span class="sr-only">Close image</span>
+        </button>
+
+        <!-- Full size image -->
+        <img id="fullSizeImage" src="/placeholder.svg" alt="" class="max-h-[90vh] max-w-[90vw] object-contain">
+    </div>
+</div>
 
 <x-footer />
+
+<!-- Video Modal (keeping this from your original code) -->
 <div id="video-modal" tabindex="-1" aria-hidden="true"
     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full lg:w-1/2 max-h-full">
@@ -106,4 +163,93 @@
 <script src="{{ asset('js/accordion.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <script src="{{ asset('js/modal-video.js') }}"></script>
+
+<!-- Product Gallery Script -->
+<script>
+    // Function to open the product gallery modal
+    function openProductGallery(productId) {
+        const galleryModal = document.getElementById(`product-gallery-${productId}`);
+        if (galleryModal) {
+            galleryModal.classList.remove('hidden');
+            galleryModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    // Function to close the product gallery modal
+    function closeProductGallery(productId) {
+        const galleryModal = document.getElementById(`product-gallery-${productId}`);
+        if (galleryModal) {
+            galleryModal.classList.add('hidden');
+            galleryModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Function to open full size image
+    function openFullImage(imageSrc, imageAlt) {
+        const fullImageModal = document.getElementById('fullImageModal');
+        const fullSizeImage = document.getElementById('fullSizeImage');
+
+        if (fullImageModal && fullSizeImage) {
+            fullSizeImage.src = imageSrc;
+            fullSizeImage.alt = imageAlt;
+
+            fullImageModal.classList.remove('hidden');
+            fullImageModal.classList.add('flex');
+        }
+    }
+
+    // Function to close full size image
+    function closeFullImage() {
+        const fullImageModal = document.getElementById('fullImageModal');
+
+        if (fullImageModal) {
+            fullImageModal.classList.add('hidden');
+            fullImageModal.classList.remove('flex');
+        }
+    }
+
+    // Close modals when clicking outside the content
+    document.addEventListener('click', function(event) {
+        const fullImageModal = document.getElementById('fullImageModal');
+        const productGalleries = document.querySelectorAll('[id^="product-gallery-"]');
+
+        // For full image modal
+        if (fullImageModal && fullImageModal.classList.contains('flex')) {
+            const fullSizeImage = document.getElementById('fullSizeImage');
+            if (event.target !== fullSizeImage && !fullSizeImage.contains(event.target)) {
+                closeFullImage();
+            }
+        }
+
+        // For product galleries
+        productGalleries.forEach(gallery => {
+            if (gallery.classList.contains('flex')) {
+                const modalContent = gallery.querySelector('.bg-white');
+                if (event.target === gallery && !modalContent.contains(event.target)) {
+                    const productId = gallery.id.replace('product-gallery-', '');
+                    closeProductGallery(productId);
+                }
+            }
+        });
+    });
+
+    // Close modals with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const fullImageModal = document.getElementById('fullImageModal');
+            if (fullImageModal && fullImageModal.classList.contains('flex')) {
+                closeFullImage();
+                return;
+            }
+
+            const openGallery = document.querySelector('[id^="product-gallery-"].flex');
+            if (openGallery) {
+                const productId = openGallery.id.replace('product-gallery-', '');
+                closeProductGallery(productId);
+            }
+        }
+    });
+</script>
 @endpush
