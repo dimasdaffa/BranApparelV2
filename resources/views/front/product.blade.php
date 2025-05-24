@@ -27,9 +27,9 @@
                 <h2 class="font-bold text-4xl leading-[45px]">{{ $product->name }}</h2>
                 <p class="leading-[30px] text-cp-light-grey">{{ $product->about }}</p>
             </div>
-            <a href="{{ route('front.appointment') }}"
+            <a href="{{ route('front.team') }}"
                 class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
-                Pesan Sekarang
+                Lihat Portofolio
             </a>
         </div>
     </div>
