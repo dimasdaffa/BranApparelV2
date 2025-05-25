@@ -9,12 +9,7 @@
     <div id="Contact"
         class="container max-w-[1130px] mx-auto flex flex-wrap xl:flex-nowrap justify-between gap-[50px] relative z-10">
         <div class="flex flex-col mt-20 gap-[50px]">
-            <div class="breadcrumb flex items-center gap-[30px]">
-                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Home</p>
-                <span class="text-cp-light-grey">/</span>
-                <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">Appointment</p>
-            </div>
-            <h1 class="font-extrabold text-4xl leading-[45px]">Custom Baju Impian dengan Sablon Terbaik</h1>
+                     <h1 class="font-extrabold text-4xl leading-[45px]">Custom Baju Impian dengan Sablon Terbaik</h1>
             <div class="flex flex-col gap-5">
                 <div class="flex items-center gap-[10px]">
                     <div class="w-6 h-6 flex shrink-0">
@@ -32,7 +27,7 @@
                     <div class="w-6 h-6 flex shrink-0">
                         <img src="assets/icons/monitor-mobbile.svg" alt="icon">
                     </div>
-                    <p class="font-semibold">BranApparel.com</p>
+                    <p class="font-semibold">branapparel.com</p>
                 </div>
             </div>
         </div>
@@ -134,9 +129,13 @@
                         placeholder="Beri detail pesanan produk"></textarea>
                 </div>
             </div>
-            <button type="submit"
-                class="bg-cp-dark-red p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
-                Hubungi Sekarang</button>
+            {{-- <button type="submit"
+                class="bg-cp-dark-red p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white text-center">
+                Hubungi Sekarang</button> --}}
+            <a href="https://wa.me/+6285162808272?text=Halo%20Admin%2C%20Saya%20ingin%20memesan%20produk%20di%20Bran%20Apparel"
+                class="bg-cp-dark-red p-5 w-full rounded-xl hover:shadow-[0_12px_30px_0_#25D366] transition-all duration-300 font-bold text-white text-center">
+                Hubungi Kami Melalui Whatsapp
+            </a>
         </form>
     </div>
 
@@ -151,4 +150,3 @@
     <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
     <script src="js/carousel.js"></script>
 @endpush
-X

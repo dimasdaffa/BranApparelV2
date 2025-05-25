@@ -64,7 +64,7 @@
                 OUR VALUES</p>
             <h2 class="font-bold text-4xl leading-[45px]">Kami Bukan Yang Pertama <br> Tetapi Kami Yang Terbaik</h2>
         </div>
-        <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
+        {{-- <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a> --}}
     </div>
     <div class="flex flex-wrap items-center gap-[30px] justify-center">
 
@@ -83,7 +83,7 @@
                     <p class="title font-bold text-xl leading-[30px]">{{ $principle->name }}</p>
                     <p class="leading-[30px] text-cp-light-grey">{{ $principle->subtitle }}</p>
                 </div>
-                <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
+                {{-- <a href="" class="font-semibold text-cp-dark-blue">Learn More</a> --}}
             </div>
         </div>
         @empty
@@ -282,7 +282,7 @@
             <h2 class="font-bold text-4xl leading-[45px]">Lihat lebih dekat bagaimana kami<br>menghadirkan baju custom
                 berkualitas!</h2>
         </div>
-        <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
+        {{-- <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a> --}}
     </div>
     <div
         class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">

@@ -17,7 +17,7 @@
                 OUR VALUES</p>
             <h2 class="font-bold text-4xl leading-[45px]">Kami Bukan Yang Pertama <br> Tetapi Kami Yang Terbaik</h2>
         </div>
-        <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
+        {{-- <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a> --}}
     </div>
     <div class="flex flex-wrap items-center gap-[30px] justify-center">
 
@@ -37,7 +37,7 @@
                         <p class="title font-bold text-xl leading-[30px]">{{ $principle->name }}</p>
                         <p class="leading-[30px] text-cp-light-grey">{{ $principle->subtitle }}</p>
                     </div>
-                    <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
+                    {{-- <a href="" class="font-semibold text-cp-dark-blue">Learn More</a> --}}
                 </div>
             </div>
         @empty
@@ -47,187 +47,6 @@
     </div>
 </div>
 
-
-
-    {{-- <div id="Stats" class="bg-cp-darker-red w-full mt-20">
-        <div class="container max-w-[1000px] mx-auto py-10">
-            <div class="flex flex-wrap items-center justify-between p-[10px]">
-                @forelse ($statistics as $statistic)
-                    <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
-                        <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
-                            <img src="{{ Storage::url($statistic->icon) }}" class="object-contain w-full h-full"
-                                alt="icon">
-                        </div>
-                        <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">{{ $statistic->goal }}</p>
-                        <p class="text-cp-light-grey">{{ $statistic->name }}</p>
-                    </div>
-                @empty
-                    <p>belum ada data</p>
-                @endforelse
-
-            </div>
-        </div>
-    </div> --}}
-    {{-- <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
-        @forelse ($products->slice(0, 3) as $product)
-            <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
-                <div class="w-[400px] h-[550px] flex shrink-0 overflow-hidden rounded-[20px]">
-                    <img src="{{ Storage::url($product->thumbnail) }}" class="w-full h-full object-cover rounded-[20px]" alt="thumbnail">
-                </div>
-                <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-                    <p class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                        {{ $product->tagline }}
-                    </p>
-                    <div class="flex flex-col gap-[10px]">
-                        <h2 class="font-bold text-4xl leading-[45px]">{{ $product->name }}</h2>
-                        <p class="leading-[30px] text-cp-light-grey">{{ $product->about }}</p>
-                    </div>
-                    <a href="{{ route('front.appointment') }}" class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
-                        Pesan Sekarang
-                    </a>
-                </div>
-            </div>
-        @empty
-            <p>belum ada data</p>
-        @endforelse
-
-        <!-- Tombol Lihat Lebih Banyak -->
-        <a href="{{ route('front.product') }}"
-            class="bg-cp-dark-red flex items-center justify-center p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold mx-auto block text-white">
-            Lihat Lebih Banyak
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-arrow-right">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-            </svg>
-        </a>
-    </div> --}}
-
-
-
-    </div>
-    {{-- <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
-        <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
-            <div class="flex flex-col gap-[14px] items-center">
-                <p
-                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                    KLIEN KAMI</p>
-                <h2 class="font-bold text-4xl leading-[45px] text-center">Kami Berbagi Mimpi yang Sama <br> Menjadi Yang
-                    Terbaik !
-                </h2>
-            </div>
-            <div
-                class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
-
-                @forelse ($teams->slice(0, 7) as $team)
-                    <div
-                        class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-                        <div
-                            class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
-                            <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
-                                <img src="{{ Storage::url($team->avatar) }}"
-                                    class="object-cover w-full h-full object-center" alt="photo">
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 text-center">
-                            <p class="font-bold text-xl leading-[30px]">{{ $team->name }}</p>
-                            <p class="text-cp-light-grey">{{ $team->occupation }}</p>
-                        </div>
-                        <div class="flex items-center justify-center gap-[10px]">
-                            <div class="w-6 h-6 flex shrink-0">
-                                <img src="{{ asset('assets/icons/global.svg') }}" alt="icon">
-                            </div>
-                            <p class="font-semibold">{{ $team->location }}</p>
-                        </div>
-                    </div>
-                @empty
-                    <p>belum ada data</p>
-                @endforelse
-
-                <a href="{{ route('front.team') }}" class="view-all-card">
-                    <div
-                        class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
-                        <div class="w-[60px] h-[60px] flex shrink-0">
-                            <img src="{{ asset('assets/icons/profile-2user.svg') }}" alt="icon">
-                        </div>
-                        <div class="flex flex-col gap-1 text-center">
-                            <p class="font-bold text-xl leading-[30px]">Lihat Semua</p>
-                            <p class="text-cp-light-grey">Pelanggan Setia Kami</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div> --}}
-    {{-- <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
-        <div class="flex flex-col gap-[14px] items-center">
-            <p class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
-                SUCCESS CLIENTS</p>
-            <h2 class="font-bold text-4xl leading-[45px] text-center">Kepercayaan Klien,<br>Kami Wujudkan!
-            </h2>
-        </div>
-        <div class="main-carousel w-full">
-
-            @forelse ($testimonials as $testimonial)
-                <div
-                    class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
-                    <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
-                        <div class="flex flex-col gap-[30px]">
-                            <div class="h-9 overflow-hidden">
-                                <img src="{{ Storage::url($testimonial->client->logo) }}" class="object-contain"
-                                    alt="icon">
-                            </div>
-                            <div class="relative pt-[27px] pl-[30px]">
-                                <div class="absolute top-0 left-0">
-                                    <img src="{{ asset('assets/icons/quote.svg') }}" alt="icon">
-                                </div>
-                                <p class="font-semibold text-2xl leading-[46px] relative z-10">{{ $testimonial->message }}
-                                </p>
-                            </div>
-                            <div class="flex items-center justify-between pl-[30px]">
-                                <div class="flex items-center gap-6">
-                                    <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
-                                        <img src="{{ Storage::url($testimonial->client->avatar) }}"
-                                            class="w-full h-full object-cover" alt="photo">
-                                    </div>
-                                    <div class="flex flex-col justify-center gap-1">
-                                        <p class="font-bold">{{ $testimonial->client->name }}</p>
-                                        <p class="text-sm text-cp-light-grey">{{ $testimonial->client->occupation }}</p>
-                                    </div>
-                                </div>
-                                <div class="flex flex-nowrap">
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                    <div class="w-6 h-6 flex shrink-0">
-                                        <img src="{{ asset('assets/icons/Star-rating.svg') }}" alt="star">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
-                        </div>
-                    </div>
-                    <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
-                        <img src="{{ Storage::url($testimonial->thumbnail) }}"
-                            class="w-full h-full object-cover object-center" alt="thumbnail">
-                    </div>
-                </div>
-            @empty
-                <p>belum ada data</p>
-            @endforelse
-        </div>
-    </div> --}}
     <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
         <div class="flex items-center justify-between">
             <div class="flex flex-col gap-[14px]">
@@ -237,8 +56,8 @@
                 <h2 class="font-bold text-4xl leading-[45px]">Lihat lebih dekat bagaimana kami<br>menghadirkan baju custom
                     berkualitas!</h2>
             </div>
-            <a href=""
-                class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
+            {{-- <a href=""
+                class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a> --}}
         </div>
         <div
             class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
@@ -287,85 +106,7 @@
             </div>
         </div>
     </div>
-    {{-- <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
-        <div class="container max-w-[1000px] mx-auto">
-            <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
-                <div class="flex flex-col gap-[30px]">
-                    <div class="flex flex-col gap-[10px]">
-                        <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
-                    </div>
-                    <a href="{{ route('front.appointment') }}"
-                        class="p-5 bg-cp-darker-red rounded-xl text-white w-fit font-bold">Hubungi
-                        Kami</a>
-                </div>
-                <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
-                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                        <button class="accordion-button flex justify-between gap-1 items-center"
-                            data-accordion="accordion-faq-1">
-                            <span class="font-bold text-lg leading-[27px] text-left">Berapa lama waktu produksi untuk baju
-                                custom?</span>
-                            <div class="arrow w-9 h-9 flex shrink-0">
-                                <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                    class="transition-all duration-300" alt="icon">
-                            </div>
-                        </button>
-                        <div id="accordion-faq-1" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Waktu produksi bervariasi, biasanya 5-10
-                                hari kerja, tergantung pada jumlah pesanan dan tingkat kerumitan desain. Kami akan
-                                menginformasikan estimasi waktu sebelum produksi dimulai.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                        <button class="accordion-button flex justify-between gap-1 items-center"
-                            data-accordion="accordion-faq-2">
-                            <span class="font-bold text-lg leading-[27px] text-left">Apakah bisa membuat desain sendiri
-                                atau harus dari template?</span>
-                            <div class="arrow w-9 h-9 flex shrink-0">
-                                <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                    class="transition-all duration-300" alt="icon">
-                            </div>
-                        </button>
-                        <div id="accordion-faq-2" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Tentu! Anda bisa mengirimkan desain
-                                sendiri atau memilih dari template yang kami sediakan. Tim kami juga siap membantu
-                                menyempurnakan desain Anda.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                        <button class="accordion-button flex justify-between gap-1 items-center"
-                            data-accordion="accordion-faq-3">
-                            <span class="font-bold text-lg leading-[27px] text-left">Apakah ada minimum order untuk
-                                pemesanan custom?</span>
-                            <div class="arrow w-9 h-9 flex shrink-0">
-                                <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                    class="transition-all duration-300" alt="icon">
-                            </div>
-                        </button>
-                        <div id="accordion-faq-3" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Kami menerima pemesanan mulai dari 1
-                                pcs, tetapi untuk jumlah besar, kami menawarkan harga spesial!</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
-                        <button class="accordion-button flex justify-between gap-1 items-center"
-                            data-accordion="accordion-faq-4">
-                            <span class="font-bold text-lg leading-[27px] text-left">Bahan dan jenis sablon apa saja yang
-                                tersedia?</span>
-                            <div class="arrow w-9 h-9 flex shrink-0">
-                                <img src="{{ asset('assets/icons/arrow-circle-down.svg') }}"
-                                    class="transition-all duration-300" alt="icon">
-                            </div>
-                        </button>
-                        <div id="accordion-faq-4" class="accordion-content hide">
-                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Kami menyediakan berbagai pilihan bahan
-                                berkualitas, seperti Cotton Combed, Polyester, dan Dri-Fit. Untuk sablon, tersedia
-                                Plastisol, Polyflex, DTG, dan Sublimasi, sesuai kebutuhan Anda.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+
     <x-footer />
     <div id="video-modal" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
