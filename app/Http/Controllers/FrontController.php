@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAppointmentRequest;
 use App\Models\Appointment;
+use App\Models\BaseProduct;
 use App\Models\CompanyAbout;
 use App\Models\CompanyStatistic;
 use App\Models\HeroSection;
@@ -80,6 +81,16 @@ class FrontController extends Controller
         $testimonials = Testimonial::take(5)->get();
         $hero_section = HeroSection::orderByDesc('id')->take(1)->get();
         return view('front.product', compact('statistics', 'principles', 'products', 'teams', 'testimonials', 'hero_section'));
+    }
+    public function baseproduct()
+    {
+        $statistics = CompanyStatistic::take(4)->get();
+        $principles = OurPrinciple::take(4)->get();
+        $baseproducts = BaseProduct::all();
+        $teams = OurTeam::take(10)->get();
+        $testimonials = Testimonial::take(5)->get();
+        $hero_section = HeroSection::orderByDesc('id')->take(1)->get();
+        return view('front.baseproduct', compact('statistics', 'principles', 'baseproducts', 'teams', 'testimonials', 'hero_section'));
     }
     public function blog()
     {

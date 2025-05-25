@@ -20,6 +20,7 @@ class RolePermissionSeeder extends Seeder
         $permissions = [
             'manage statistics',
             'manage products',
+            'manage baseproducts',
             'manage principles',
             'manage testimonials',
             'manage clients',

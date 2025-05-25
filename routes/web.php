@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\BaseProductController;
 use App\Http\Controllers\CompanyAboutController;
 use App\Http\Controllers\CompanyStatisticController;
 use App\Http\Controllers\FrontController;
@@ -25,6 +26,7 @@ Route::get('/faq', [FrontController::class, 'faq'])->name('front.faq');
 Route::get('/appointment', [FrontController::class, 'appointment'])->name('front.appointment');
 Route::post('/appointment/store', [FrontController::class, 'appointment_store'])->name('front.appointment_store');
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('front.gallery');
+Route::get('/baseproduct', [FrontController::class, 'baseproduct'])->name('front.baseproduct');
 
 
 Route::get('/dashboard', function () {
@@ -44,6 +46,9 @@ Route::middleware('auth')->group(function () {
         });
         Route::middleware('can:manage products')->group(function () {
             Route::resource('products', ProductController::class);
+        });
+        Route::middleware('can:manage baseproducts')->group(function () {
+            Route::resource('baseproducts', BaseProductController::class);
         });
         Route::middleware('can:manage principles')->group(function () {
             Route::resource('principles', OurPrincipleController::class);

@@ -14,15 +14,19 @@
  font-semibold hover:text-cp-dark-blue transition-all duration-300">
             <a href="{{ route('front.index') }}">Home</a>
         </li>
+        <li class="{{ request()->routeIs('front.baseproduct') ? 'text-cp-dark-blue' : '' }}
+ font-semibold hover:text-cp-dark-blue transition-all duration-300">
+            <a href="{{ route('front.baseproduct') }}">Products</a>
+        </li>
         <li class="{{ request()->routeIs('front.product') ? 'text-cp-dark-blue' : '' }}
  font-semibold hover:text-cp-dark-blue transition-all duration-300">
-            <a href="{{ route('front.product') }}">Products</a>
+            <a href="{{ route('front.product') }}">Portofolio</a>
         </li>
-        <li
+        {{-- <li
             class="{{ request()->routeIs('front.team') ? 'text-cp-dark-blue' : '' }}
  font-semibold hover:text-cp-dark-blue transition-all duration-300">
             <a href="{{ route('front.team') }}">Portfolio</a>
-        </li>
+        </li> --}}
         {{-- <li class="{{ request()->routeIs('front.blog') ? 'text-cp-dark-blue' : '' }}
  font-semibold hover:text-cp-dark-blue transition-all duration-300">
             <a href="{{ route('front.blog') }}">Blog</a>
