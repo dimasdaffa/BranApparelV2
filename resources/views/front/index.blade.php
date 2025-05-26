@@ -18,7 +18,7 @@
                 <p class="text-cp-light-grey leading-[30px] max-w-[437px]">{{ $hero->subheading }}</p>
             </div>
             <div class="flex items-center gap-4">
-                <a href=""
+                <a href="{{route('front.product')}}"
                     class="bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Lebih
                     Banyak</a>
                 <button class="bg-cp-darker-red p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]"
@@ -95,7 +95,7 @@
 
 <div id="Stats" class="bg-cp-darker-red w-full mt-20">
     <div class="container max-w-[1000px] mx-auto py-10">
-        <div class="flex flex-wrap items-center justify-between p-[10px]">
+        <div class="flex flex-wrap items-center md:justify-between justify-center gap-[50px] p-[10px]">
             @forelse ($statistics as $statistic)
             <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
                 <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
