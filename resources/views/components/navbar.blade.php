@@ -2,7 +2,7 @@
     <!-- Logo Section -->
     <div class="flex items-center gap-3">
         <div class="flex shrink-0 h-[43px] overflow-hidden">
-            <img src="assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
+            <img src="assets/logo/logo.svg" class="object-contain w-full h-full " alt="logo">
         </div>
         <div class="flex flex-col">
             <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">BranApparel</p>
@@ -43,7 +43,7 @@
     </button>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-99 hidden">
         <div class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out" id="mobile-menu-panel">
             <!-- Mobile Menu Header -->
             <div class="flex items-center justify-between p-6 border-b">

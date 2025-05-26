@@ -96,6 +96,8 @@
         </div>
     </div>
     <x-footer/>
+
+    <x-whatsapp/>
 @endsection
 @push('after-scripts')
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"

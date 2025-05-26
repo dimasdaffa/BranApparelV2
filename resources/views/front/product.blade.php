@@ -8,35 +8,267 @@
     </div>
 </div>
 
-<div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
+<div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-10 lg:gap-20 mt-20 px-4 lg:px-0">
     @forelse ($products as $product)
-    <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
-        <div class="w-[400px] h-[550px] flex shrink-0 overflow-hidden rounded-[20px]">
+    <div class="product flex flex-col lg:flex-row lg:flex-wrap justify-center items-center gap-6 lg:gap-[60px] lg:even:flex-row-reverse">
+
+        <!-- Product Image -->
+        <div class="w-full max-w-[350px] h-[280px] lg:w-[400px] lg:h-[550px] flex shrink-0 overflow-hidden rounded-[12px] lg:rounded-[20px] mx-auto lg:mx-0">
             <!-- Make the thumbnail clickable to open gallery -->
             <img src="{{ Storage::url($product->thumbnail) }}"
-                 class="w-full h-full object-cover rounded-[20px] cursor-pointer hover:opacity-90 transition-opacity"
+                 class="w-full h-full object-cover rounded-[12px] lg:rounded-[20px] cursor-pointer hover:opacity-90 transition-opacity"
                  alt="{{ $product->name }}"
                  onclick="openProductGallery({{ $product->id }})"
                  data-product-id="{{ $product->id }}">
         </div>
-        <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
-            <p class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+
+        <!-- Product Content -->
+        <div class="flex flex-col gap-4 lg:gap-[30px] py-0 lg:py-[50px] h-fit max-w-full lg:max-w-[500px] text-center lg:text-left">
+            <!-- Badge -->
+            <p class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[6px_12px] lg:p-[8px_16px] rounded-full uppercase font-bold text-xs lg:text-sm mx-auto lg:mx-0">
                 {{ $product->tagline }}
             </p>
-            <div class="flex flex-col gap-[10px]">
-                <h2 class="font-bold text-4xl leading-[45px]">{{ $product->name }}</h2>
-                <p class="leading-[30px] text-cp-light-grey">{{ $product->about }}</p>
+
+            <!-- Title and Description -->
+            <div class="flex flex-col gap-2 lg:gap-[10px]">
+                <h2 class="font-bold text-2xl lg:text-4xl leading-[32px] lg:leading-[45px]">
+                    {{ $product->name }}
+                </h2>
+                <p class="leading-[24px] lg:leading-[30px] text-cp-light-grey text-sm lg:text-base px-2 lg:px-0">
+                    {{ $product->about }}
+                </p>
             </div>
-            <a href="#"
-                class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
-                Klik gambar di samping
-            </a>
+
+            <!-- CTA Button -->
+            <div class="flex flex-col sm:flex-row gap-3 lg:gap-4 items-center justify-center lg:justify-start">
+                <a href="#"
+                    class="bg-cp-dark-red p-[12px_18px] lg:p-[14px_20px] w-full sm:w-fit text-center rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white text-sm lg:text-base">
+                    <span class="lg:hidden">Tap gambar untuk galeri</span>
+                    <span class="hidden lg:inline">Klik gambar di samping</span>
+                </a>
+
+                <!-- Optional: Add direct gallery button for mobile -->
+                <button onclick="openProductGallery({{ $product->id }})"
+                        class="lg:hidden bg-white border-2 border-cp-dark-red text-cp-dark-red p-[12px_18px] w-full sm:w-fit text-center rounded-xl hover:bg-cp-dark-red hover:text-white transition-all duration-300 font-bold text-sm">
+                    Lihat Galeri
+                </button>
+            </div>
         </div>
     </div>
     @empty
-    <p>belum ada data</p>
+    <div class="text-center py-10">
+        <p class="text-sm lg:text-base text-cp-light-grey">belum ada data</p>
+    </div>
     @endforelse
+
 </div>
+
+<!-- Additional CSS for better mobile experience -->
+<style>
+/* Mobile-specific adjustments */
+@media (max-width: 1023px) {
+    #Products .product {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #E8EAF2;
+    }
+
+    #Products .product:last-child {
+        border-bottom: none;
+    }
+
+    /* Better image interaction on mobile */
+    #Products .product img {
+        object-position: center;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    #Products .product img:active {
+        transform: scale(0.98);
+    }
+
+    /* Ensure proper touch targets */
+    #Products .product button,
+    #Products .product a {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 640px) and (max-width: 1023px) {
+    #Products .product {
+        flex-direction: row;
+        text-align: left;
+        gap: 2rem;
+    }
+
+    #Products .product .badge {
+        margin: 0;
+    }
+
+    #Products .product .flex.flex-col.sm\:flex-row {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    #Products .product > div:first-child {
+        max-width: 300px;
+        height: 240px;
+        flex-shrink: 0;
+    }
+
+    #Products .product > div:last-child {
+        flex: 1;
+        text-align: left;
+    }
+
+    #Products .product .lg\:hidden {
+        display: none;
+    }
+
+    #Products .product .hidden.lg\:inline {
+        display: inline;
+    }
+}
+
+/* Enhanced mobile gallery interaction */
+@media (max-width: 639px) {
+    #Products .product img {
+        position: relative;
+    }
+
+    #Products .product img::after {
+        content: '👆 Tap untuk galeri';
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    #Products .product:hover img::after {
+        opacity: 1;
+    }
+}
+
+/* Better spacing and alignment */
+#Products .product .flex.flex-col.gap-4 {
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    #Products .product .flex.flex-col.gap-4 {
+        align-items: flex-start;
+    }
+}
+
+/* Responsive image sizing */
+@media (max-width: 480px) {
+    #Products .product > div:first-child {
+        max-width: 100%;
+        height: 250px;
+    }
+}
+
+/* Loading state for images */
+#Products .product img {
+    background: #f3f4f6;
+    background-image: linear-gradient(45deg, #f3f4f6 25%, transparent 25%),
+                      linear-gradient(-45deg, #f3f4f6 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #f3f4f6 75%),
+                      linear-gradient(-45deg, transparent 75%, #f3f4f6 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+#Products .product img[src] {
+    background: none;
+}
+</style>
+
+<!-- Enhanced JavaScript for better mobile interaction -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced mobile gallery interaction
+    const productImages = document.querySelectorAll('#Products .product img[data-product-id]');
+
+    productImages.forEach(img => {
+        // Add touch feedback
+        img.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+        });
+
+        img.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+        });
+
+        // Add loading state
+        img.addEventListener('load', function() {
+            this.classList.add('loaded');
+        });
+
+        // Add error handling
+        img.addEventListener('error', function() {
+            this.src = '/placeholder.svg?height=280&width=350';
+            this.alt = 'Image not available';
+        });
+    });
+
+    // Add swipe gesture for mobile gallery navigation (if needed)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    productImages.forEach(img => {
+        img.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        img.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe(this);
+        });
+    });
+
+    function handleSwipe(element) {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            // Add haptic feedback if available
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+
+            // Trigger gallery open
+            const productId = element.getAttribute('data-product-id');
+            if (productId && typeof openProductGallery === 'function') {
+                openProductGallery(productId);
+            }
+        }
+    }
+});
+
+// Placeholder function for gallery (replace with your actual implementation)
+function openProductGallery(productId) {
+    console.log('Opening gallery for product:', productId);
+    // Your gallery implementation here
+
+    // Example: Show a simple alert for demonstration
+    alert(`Opening gallery for product ${productId}`);
+
+    // In a real implementation, you might:
+    // - Open a modal with product images
+    // - Navigate to a gallery page
+    // - Show a lightbox with multiple images
+}
+</script>
 
 <!-- Product Gallery Modals -->
 @foreach ($products as $product)
@@ -151,6 +383,8 @@
         </div>
     </div>
 </div>
+
+<x-whatsapp/>
 @endsection
 
 @push('after-scripts')

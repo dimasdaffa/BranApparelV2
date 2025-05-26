@@ -3,7 +3,7 @@
 <div id="header" class="bg-[#F6F7FA] relative overflow-hidden min-h-screen lg:min-h-auto">
     <div class="container max-w-[1130px] mx-auto relative pt-10 lg:pt-10 px-4 lg:px-0 z-10">
         {{-- reusable navbar --}}
-        <x-navbar />
+        <x-navbar class="relative z-50" />
         @forelse ($hero_section as $hero)
         <input type="hidden" name="path_video" id="path_video" value="{{ $hero->path_video }}">
         <div id="Hero" class="flex flex-col gap-[20px] lg:gap-[30px] mt-16 lg:mt-20 pb-20 lg:pb-20">
@@ -27,7 +27,7 @@
 
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 px-4 lg:px-0">
-                <a href="{{route('front.product')}}"
+                <a href="#Products"
                     class="bg-cp-dark-red p-4 lg:p-5 w-full sm:w-fit text-center rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
                     Lebih Banyak
                 </a>
@@ -67,7 +67,7 @@
     /* Adjust hero content positioning on mobile */
     #Hero {
         position: relative;
-        z-index: 10;
+        z-index: 1;
     }
 
     /* Better button styling on mobile */
@@ -90,6 +90,31 @@
     #Hero p {
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
+}
+
+/* Navbar z-index fix to ensure it stays on top */
+.navbar,
+nav,
+header nav,
+x-navbar {
+    position: relative;
+    z-index: 100 !important;
+}
+
+/* If the navbar has a fixed position */
+.fixed-navbar,
+.navbar-fixed,
+.fixed-top {
+    position: fixed;
+    z-index: 1000 !important;
+}
+
+/* Ensure dropdown menus also have high z-index */
+.navbar .dropdown,
+.navbar .dropdown-menu,
+nav .dropdown,
+nav .dropdown-menu {
+    z-index: 110 !important;
 }
 </style>
 <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20 px-4 lg:px-0">
@@ -982,7 +1007,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Modal body -->
             <div class="">
                 <!-- video src added from the js script (modal-video.js) to prevent video running in the backgroud -->
-                <iframe id="videoFrame" class="aspect-[16/9]" width="100%" src="" title="Demo Project Laravel Portfolio"
+                <iframe id="videoFrame" class="aspect-[16/9]" width="100%" src="" title="Demo Project Laravel Profile"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -990,6 +1015,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </div>
+
+<x-whatsapp/>
 @endsection
 
 @push('after-scripts')
