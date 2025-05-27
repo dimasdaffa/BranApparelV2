@@ -10,7 +10,7 @@
                     <span class="text-cp-light-grey">/</span>
                     <p class="text-cp-light-grey last-of-type:text-cp-black last-of-type:font-semibold">FAQ</p>
                 </div>
-                <h1 class=" text-2xl leading-[45px] text-center">Bran Apparel merupakan perusahaan konveksi ternama di Indonesia yang melayani pembuatan produk Apparel custom seperti kaos, Jersey, kemeja, polo serta produk Apparel dan Merchandise lainnya yang menggunakan bahan terbaik sehingga menghasilkan produk yang berkualitas.<br/> Dengan harga yang irit, kami melayani pembuatan produk yang memiliki kualitas Wahid. Pelayanan optimal dan kualitas produk terbaik menjadi komitmen utama kami dalam mewujudkan #PastiPAS #PastiPUAS #SemuaBergaransi.
+                <h1 class=" text-2xl leading-[35px] text-center">Bran Apparel merupakan perusahaan konveksi ternama di Indonesia yang melayani pembuatan produk Apparel custom seperti kaos, Jersey, kemeja, polo serta produk Apparel dan Merchandise lainnya yang menggunakan bahan terbaik sehingga menghasilkan produk yang berkualitas.<br/> Dengan harga yang irit, kami melayani pembuatan produk yang memiliki kualitas Wahid. Pelayanan optimal dan kualitas produk terbaik menjadi komitmen utama kami dalam mewujudkan #PastiPAS #PastiPUAS #SemuaBergaransi.
                 </h1>
             </div>
         </div>
