@@ -1,7 +1,7 @@
 @extends('front.layouts.app')
 
 @section('content')
-    <div id="header" class="bg-[#fefefe] relative">
+    <div id="header" class="bg-slate-50 relative">
         <div class="container max-w-[1130px] mx-auto relative py-6 sm:py-10 px-4 z-10">
             <x-navbar />
         </div>
@@ -14,10 +14,6 @@
                 @forelse ($baseproducts as $baseproduct)
                     <div
                         class="product-card bg-white border border-gray-200 rounded-xl overflow-hidden group cursor-pointer flex flex-col justify-between relative transition-all duration-300 ease-in-out shadow-md hover:shadow-xl focus-within:outline-none focus-within:ring-2 focus-within:ring-red-500 focus-within:ring-offset-2 focus-within:ring-offset-white focus-within:shadow-lg">
-                        {{-- Aksen Merah di Pojok --}}
-                        <div
-                            class="absolute top-0 right-0 w-0 h-0 border-l-[24px] border-l-transparent border-t-[24px] border-t-red-500 z-10 group-hover:border-t-red-600 transition-colors duration-300">
-                        </div>
 
                         <div class="flex-grow">
                             {{-- Kontainer Gambar Produk --}}
@@ -30,20 +26,6 @@
                                         data-product-id="{{ $baseproduct->id }}">
                                 </div>
 
-                                {{-- Overlay Hover untuk "View Details" --}}
-                                {{-- <div class="absolute inset-2 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 ease-in-out flex items-center justify-center opacity-0 group-hover:opacity-100 p-4 z-10 rounded-lg"
-                                    onclick="openProductGallery({{ $baseproduct->id }})">
-                                    <div
-                                        class="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider bg-red-500 hover:bg-red-600 px-4 py-2.5 rounded-md shadow-md transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 ease-in-out flex items-center space-x-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                            class="w-4 h-4">
-                                            <path
-                                                d="M.065 9.134a1.25 1.25 0 0 1 .367-1.524l.02-.015L3.39 5.873a1.25 1.25 0 0 1 1.54-.103l.08.059 3.124 2.013A1.25 1.25 0 0 1 9 8.718V7.5a1.25 1.25 0 0 1 1.25-1.25h5A1.25 1.25 0 0 1 16.5 7.5v5A1.25 1.25 0 0 1 15.25 13.75h-5A1.25 1.25 0 0 1 9 12.5V11.28a1.25 1.25 0 0 1-.856-.973l-3.124-2.013-.08-.059a1.25 1.25 0 0 1-.102-1.54l.026-.04a.063.063 0 0 0-.015-.02Z" />
-                                            <path d="M10.25 15A2.75 2.75 0 1 0 10.25 9.5a2.75 2.75 0 0 0 0 5.5Z" />
-                                        </svg>
-                                        <span>View Details</span>
-                                    </div>
-                                </div> --}}
                             </div>
 
                             {{-- Detail Produk --}}

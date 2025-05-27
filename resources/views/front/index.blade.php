@@ -12,7 +12,7 @@
                 <div class="w-5 h-5 flex shrink-0 overflow-hidden">
                     <img src="{{ asset('assets/icons/crown.svg') }}" class="object-contain" alt="icon">
                 </div>
-                <p class="font-semibold text-sm">{{ $hero->achievement }}</p>
+                <p class="font-semibold text-xs">{{ $hero->achievement }}</p>
             </div>
 
             <!-- Hero Content -->
