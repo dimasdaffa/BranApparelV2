@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="thumbnail" :value="__('Thumbnail (Legacy - Optional)')" />
+                        <x-input-label for="thumbnail" :value="__('Thumbnail')" />
                         <input id="thumbnail" class="block mt-1 w-full border border-gray-300 rounded-md shadow-sm"
                             type="file" name="thumbnail" accept="image/*" />
                         <p class="mt-1 text-sm text-gray-500">This is for backward compatibility. You can use Product
@@ -80,27 +80,27 @@
         document.getElementById('images').addEventListener('change', function(event) {
             const previewContainer = document.getElementById('image-preview-container');
             previewContainer.innerHTML = '';
-            
+
             if (this.files && this.files.length > 0) {
                 Array.from(this.files).forEach((file, index) => {
                     // Validate file type
                     if (!file.type.startsWith('image/')) {
                         return;
                     }
-                    
+
                     const reader = new FileReader();
-                    
+
                     reader.onload = function(e) {
                         const previewDiv = document.createElement('div');
                         previewDiv.className = 'relative';
-                        
+
                         const img = document.createElement('img');
                         img.src = e.target.result;
                         img.className = 'w-full h-32 object-cover rounded-lg border border-gray-200';
                         img.alt = `Preview ${index + 1}`;
-                        
+
                         previewDiv.appendChild(img);
-                        
+
                         // Add primary badge for first image
                         if (index === 0) {
                             const badge = document.createElement('span');
@@ -108,16 +108,16 @@
                             badge.textContent = 'Primary';
                             previewDiv.appendChild(badge);
                         }
-                        
+
                         // Add image number
                         const numberBadge = document.createElement('span');
                         numberBadge.className = 'absolute top-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full';
                         numberBadge.textContent = index + 1;
                         previewDiv.appendChild(numberBadge);
-                        
+
                         previewContainer.appendChild(previewDiv);
                     };
-                    
+
                     reader.readAsDataURL(file);
                 });
             }

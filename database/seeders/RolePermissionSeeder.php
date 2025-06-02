@@ -46,9 +46,9 @@ class RolePermissionSeeder extends Seeder
 
         //Membuat role admin bernama ...
         $user = User::create([
-            'name' => 'superadmin',
-            'email' => 'superadmin@mail.com',
-            'password' => bcrypt('superadmin')
+            'name' => 'masgibransangadmin',
+            'email' => 'masgibransangadmin@mail.com',
+            'password' => bcrypt('2211masgibranapparel1122')
         ]);
         //Dimana user .. mempunyai role Super Admin
         $user->assignRole($superAdminRole);

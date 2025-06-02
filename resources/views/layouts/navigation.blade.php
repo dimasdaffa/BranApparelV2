@@ -73,9 +73,9 @@
                                 <x-dropdown-link :href="route('admin.testimonials.index')">
                                     {{ __('Testimonials') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('admin.clients.index')">
+                                {{-- <x-dropdown-link :href="route('admin.clients.index')">
                                     {{ __('Our Clients') }}
-                                </x-dropdown-link>
+                                </x-dropdown-link> --}}
                             </x-slot>
                         </x-dropdown>
                     </div>
@@ -83,10 +83,10 @@
                     <x-nav-link :href="route('admin.abouts.index')" :active="request()->routeIs('admin.abouts.index')">
                         {{ __('About') }}
                     </x-nav-link>
-
+{{--
                     <x-nav-link :href="route('admin.appointments.index')" :active="request()->routeIs('admin.appointments.index')">
                         {{ __('Appointments') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
 
                 </div>
             </div>
