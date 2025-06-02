@@ -75,7 +75,7 @@ class BaseProductController extends Controller
     {
         //
         DB::transaction(function() use ($baseproduct) {
-            $baseproduct->delete();
+            $baseproduct->forceDelete();
         });
         return redirect()->route('admin.baseproducts.index');
     }
