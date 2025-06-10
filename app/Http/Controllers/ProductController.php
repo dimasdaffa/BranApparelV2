@@ -142,7 +142,7 @@ class ProductController extends Controller
             }
 
             // Delete the product (and related images due to cascade)
-            $product->forceDelete();
+            $product->forceDelete();    
         });
 
         return redirect()->route('admin.products.index');
